@@ -1,0 +1,30 @@
+package main;
+
+import mob.Pokemon;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		System.out.println("복습 2!");
+		
+		//객체 생성 //기본생성자를 이용하여 생성
+		Pokemon p = new Pokemon();
+		
+		//setter를 이용하여 필드값 할당
+		p.setName("피카츄");
+		p.setHp(100);
+		p.setAtk(24);
+		
+		//getter를 이용하여 값 확인
+		String str = p.getFieldInfo();
+		System.out.println(str);
+//		System.out.println(p.getName());
+//		System.out.println(p.getHp());
+//		System.out.println(p.getAtk());
+//		원래는 이건데 이렇게 적으면 귀찮으니까
+		
+		
+	}
+
+}
