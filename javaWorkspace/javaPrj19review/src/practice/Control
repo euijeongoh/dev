@@ -1,0 +1,31 @@
+package practice;
+
+public class ControlTest {
+	
+	/*
+	 * 제어문 : 프로그램의 흐름을 제어
+	 * 
+	 * - 조건문 : (분기점)
+	 * if, else if, else
+	 * switch, break
+	 * 삼항연산자
+	 * 
+	 * - 반복문
+	 * while
+	 * for
+	 * do - while
+	 * break, continue
+	 * 
+	 */
+	
+	public void test(){
+		//조건문 (숫자가 양수인지 음수이지 제로인지 판단)
+		//반복문 (어떤 작업을 무한반복 시키는 것, 출력문을 1~100까지 출력하는 것)
+	
+		for(int x = 1; x <= 100; x++) {
+			System.out.println(x);
+		}
+		
+	}
+
+}
