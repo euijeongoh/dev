@@ -1,0 +1,54 @@
+package mob;
+
+public class Pokemon {
+	
+	//기본생성자
+	public Pokemon() {
+		
+	}
+
+	//멤버 변수
+	private String name;
+	private int hp;
+	private int atk;
+	
+	//멤버 메소드
+	public void bodyAttack() {
+		System.out.println(this.name + "의 몸통박치기!");
+	}
+	
+	//getter(name)
+	public String getName() {
+		return name;
+	}
+	
+	//getter(hp)
+	public int getHp() {
+		return hp;
+	}
+	
+	//getter(atk)
+	public int getAtk() {
+		return atk;
+	}
+	
+	//setter(name)
+	public void setName(String name) {
+		this.name  = name;
+	}
+	
+	//setter(hp)
+	public void setHp(int hp) {
+		this.hp = hp;
+	}
+	
+	//setter(atk)
+	public void setAtk(int atk) {
+		this.atk = atk;
+	}
+	
+	public String getFieldInfo () {
+		return ("name=" + name + ", hp=" + hp + ", atk=" + atk);
+	}
+	
+} //class
