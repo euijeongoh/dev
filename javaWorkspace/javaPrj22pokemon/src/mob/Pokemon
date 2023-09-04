@@ -1,0 +1,16 @@
+package mob;
+
+public class Pokemon {
+	
+	//멤버 == 이클립스의 구성요소 (멤버변수와 멤버메소드 만들어보기)
+
+	public String name;
+	public int hp;  
+	public int atk; //public이라고 적으면 각각의 변수에 전체공개로 접근할 수 있게된다
+	//빨간줄이 사라지고 주솟값으로 찾아갈 수 있게된다
+	
+	
+	public void attack() {
+		System.out.println("공격!"); 
+	}
+}
