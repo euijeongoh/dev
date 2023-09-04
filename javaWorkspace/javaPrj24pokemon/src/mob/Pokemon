@@ -1,0 +1,14 @@
+package mob;
+
+public class Pokemon {
+
+	
+String nmae;
+int atk ;
+int der ;
+int hp ;
+
+public void bodyAttack() {
+	System.out.println("name" + "의 몸통박치기!");
+}
+}
