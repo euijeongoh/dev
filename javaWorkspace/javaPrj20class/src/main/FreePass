@@ -1,0 +1,8 @@
+package main;
+
+public class FreePass {
+
+	String name;
+	String nick;
+	int birthday;
+}
