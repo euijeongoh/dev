@@ -1,0 +1,59 @@
+package main;
+
+import java.util.Scanner;
+
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		
+		Scanner sc = new Scanner(System.in); //스캐너 객체 준비
+		//소수 판별
+		
+		//정수 입력받기
+		int num = sc.nextInt();
+		
+		
+		//소수인지 판단
+		//-> 약수가 2개 (1과 자신)
+		//=> 1, 자신 빼고 다른 수로 나누어지면 안됨
+		
+		//2 ~ num-1 중에서 num이랑 나눴을 때, 나누어 떨어지는게 있는지?
+		boolean isPrime = true; //아래 소수가 아니라고 하기위에 변수만들기
+		for(int i = 2; i < num/2; i++) { 
+			if(num % i == 0) { //일 경우에 소수가 아니라서 문제가 있음
+				isPrime = false;
+				
+			}
+		} 
+		
+		
+		//결과 출력	
+		
+		String str = "";
+		/* 아래 코드는 동작ㅎ기는 하지만 하지 말 것
+		str = num == 1 ? "not prime" : isPrime? "prime" : "  */
+		
+		str = isPrime? "prime" : "not prime";
+		//str이 소수가 맞으면 프라임을 넣을거고 아니면 낫프라임 넣을거임
+		if(num == 1){
+			System.out.println("not prime");//숫자 1이 들어오면
+		}else {
+			System.out.println(str);
+		} //숫자 1같은 경우에는 반복문을 거쳐도 의미가 없음
+		 // 따라서 숫자 1이면
+		
+		//소수 아님
+		System.out.println(str);
+		
+//		if(isPrime) {
+//		System.out.println("prime");
+//		}else {
+//		System.out.println("notPrime");
+//		}
+		
+		
+	}
+
+}
