@@ -1,0 +1,33 @@
+package main;
+
+import battle.BattleManager;
+import mob.Pokemon; // 포켓몬이라는 객체가 다른 클래스에 있어서 그 다른 클래스에 있는 객체를 사용하겠다
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		
+		
+		//포켓몬 배틀
+		BattleManager bm = new BattleManager();
+		bm.battleStart();
+		
+		
+//		//포켓몬 객체 생성하고 해당 객체의 주소를 변수에 담기
+//		Pokemon x = new Pokemon (); //new Pokemon이라 쓰면 포켓몬 객체를 만들 수 있음
+//		//포켓몬 객체를 생성해서 x라는 변수에 주솟값 할당
+//		
+//		//객체 안의 변수들에 값 넣기
+//		x.name = "파이리";
+//		x.hp = 100;
+//		
+//		//객체 안의 변수들 출력해보기
+//		System.out.println(x.name);
+//		System.out.println(x.hp);
+//		
+//		//객체의 attack 메소드 호출하기
+//		x.attack(); 
+	}
+
+}
