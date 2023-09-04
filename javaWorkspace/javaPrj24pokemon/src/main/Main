@@ -1,0 +1,28 @@
+package main;
+
+import game.GameManager;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		System.out.println("====포켓몬 골드====");
+		
+		//게임시작
+		GameManager gm = new GameManager();
+		gm.gameStart();
+		
+		
+		//포켓몬 선택
+		
+		//배틀하기
+		
+		//결과출력
+		
+		
+		
+		
+		
+	}//main
+
+}//class
