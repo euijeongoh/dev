@@ -1,0 +1,79 @@
+package data;
+
+public class Person {
+	
+	//기본생성자 ( 파라미터 x, JVM이 자동으로 만들어줌 (다른 생성자가 없을 때) )
+	public Person() {
+		
+	}
+
+	
+	//멤버 변수 (모든 사람들이 가지고 있는 것)
+	private String name;  // 2글자 이상이어야함
+	private int age;   	// 음수면 안되고 기존 나이보다 작으면 안된다.
+	private char gender;  // M, F (gender는 M, F 둘 중 하나만)
+	
+	/* 
+	 * Main에서 p.name을 하면 안되는데 여기서 public을 사용해서 접근제한을 풀어야한다.
+	 * 외부에서 이상한 특수문자 등 이상한 값을 못넣게 하기위해 public에서 전부 private로 바꾼다
+	 * 하지만 정상적인 값을 넣으려해도 문제가 생기기 때문에 정상적인 것은 넣게 해줄 수 있도록
+	 * setter변수를 이용해서 멤버변수를 채울 수 있게 한다.
+	 */
+	
+	
+	//멤버 메소드 (모든 사람들이 가지고 있는 동작, 행위)
+	public void breath() {
+		System.out.println("호흡");
+	}
+	
+	//getter (name) //멤버변수를 반환하는 것
+	public String getName() {
+		return name;
+	}
+	
+	//getter (age)
+	public int getAge() {
+		return age;
+	}
+	
+	//getter (gender)
+	public char getGender() {
+		return gender;
+	}
+	
+	//setter (name)
+	public void setName(String name){  //return할 데이터는 없으니까 void
+		if(name.length()<2) {
+			System.out.println("잘못된 이름입니다.");
+		}else {
+			this.name = name;  // 이 메소드는 어디에서 쓰던간 사용해야해서 전체공게로 해야하기에 public접근제한자로 설정
+		}
+	}
+	
+	//setter (age)
+	public void setAge(int age) {
+		if (age < 0 || age < this.age) {
+			System.out.println("나이가 이상함");
+		}else {
+			this.age = age;
+		}
+	}
+	
+	//setter (gender)
+	public void setGender(char gender) {
+		if (gender == 'M' || gender == 'F') {
+			this.gender = gender;
+		}else {
+			System.out.println("성별을 확인바람.");
+		}
+	}
+	
+	//객체 안의 모든 멤버변수(==필드)들의 정보를 return하는 메소드
+	//접근제한자 리턴타입 메소드명(파라미터) {
+	public String getFieldInfo() {
+		return "name : ," + this.name + "age : ," + this.age + "gender : " + this.gender;
+	}
+	
+	
+	
+}//class
