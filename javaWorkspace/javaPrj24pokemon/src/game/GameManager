@@ -1,0 +1,17 @@
+package game;
+
+public class GameManager {
+	
+	//게임시작
+	public void gameStart() {
+		//포켓몬 선택
+		
+		
+		//배틀하기
+		
+		//결과출력
+		
+		
+	}
+
+}
