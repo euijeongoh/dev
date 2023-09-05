@@ -1,0 +1,23 @@
+package main;
+
+import data.Person;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		System.out.println("생성자 오버로딩");
+		
+		//생성자를 이용하여 객체 준비
+//		Person p = new Person("오의정" , 24);		
+//		System.out.println(p.getFieldInifo());
+		
+		//setter를 이용한 객체 준비
+		Person p = new Person();
+		p.setName("오의정");
+		p.setAge(24);
+		System.out.println(p.toString());
+		
+	}
+
+}
