@@ -1,0 +1,18 @@
+package mob;
+
+public class Pairi extends Pokemon {
+
+	
+	//기본생성자
+	public Pairi(int hp, int atk, int def) {
+		super("파이리", hp, atk, def); //이름은 항상 파이리로 고정
+	}
+
+	@Override
+	public void skill() {
+		System.out.println("파이어볼!");
+	}
+	
+	
+	
+} //class
