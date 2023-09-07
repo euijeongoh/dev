@@ -1,0 +1,18 @@
+package mob;
+
+public class Pikachu extends Pokemon {
+
+	
+	//기본생성자
+	public Pikachu(int hp, int atk, int def) { 
+		super("피카츄", hp, atk, def); //name은 고정값이기 때문
+	}
+
+	@Override //이 메소드는 오버라이드 한 것이라는 뜻
+	public void skill() {
+		System.out.println("백만볼트!");
+	}
+	
+	
+	
+} //class
