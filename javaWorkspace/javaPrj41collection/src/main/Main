@@ -20,7 +20,7 @@ public class Main {
 //		tc.method05();
 		
 		PracticeClass pc = new PracticeClass();
-		pc.method01();
+//		pc.method01();
 		pc.method02();
 		pc.method03();
 		pc.method04();
