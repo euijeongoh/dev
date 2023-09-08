@@ -1,0 +1,6 @@
+package main;
+
+public interface Pokemon {
+
+	public abstract void Pikachu();
+}
