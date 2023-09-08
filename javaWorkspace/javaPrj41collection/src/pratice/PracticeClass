@@ -10,7 +10,71 @@ public class PracticeClass {
 	//List
 	public void method01() {
 		System.out.println("---Lsit---");
+		List al = package practice;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+
+import mob.Pokemon;
+
+public class PracticeClass {
+	
+	//List
+	public void method01() {
+		System.out.println("---Lsit---");
 		List al = new ArrayList();
+		
+		Pokemon p = new Pokemon();
+		int num = 10;
+		String str = "hello";
+		
+		al.add(p);
+		al.add(num);
+		al.add(str);
+		
+//		System.out.println(al.get(0));
+//		System.out.println(al.get(1));
+//		System.out.println(al.get(2));
+		
+		System.out.println(al);  //al.toString에서 .toString 생략가능
+		
+//		al.add(0, "안녕"); //원래 안녕만 적으면 안녕이 가장 뒤로 가는데 앞에 0을 적으면 0번째로감
+//		al.clear(); //다 지워지는 것
+		boolean result = al.contains(10);
+		System.out.println(result);
+		
+		System.out.println(al);
+	}
+	
+	//Set
+	public void method02() {
+		System.out.println("---Set---");
+		
+		HashSet s = new HashSet();
+		
+		s.add("one");
+		s.add("one");
+		s.add("three");
+		s.add("4");
+		s.add("5");
+		
+		s.clear();
+		
+		System.out.println(s);
+	}
+	
+	//Map
+	public void method03() {}
+	
+	//Stack
+	public void method04() {}
+	
+	//Queue
+	public void method05() {}
+
+}
+new ArrayList();
 		
 		Pokemon p = new Pokemon();
 		int num = 10;
