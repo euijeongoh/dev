@@ -1,0 +1,8 @@
+package main;
+
+public interface Programmer { //이 안에는 무조건 추상메소드만 올 수 있음
+	
+	public abstract void coding(); 
+		
+
+}
