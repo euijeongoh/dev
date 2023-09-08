@@ -1,0 +1,93 @@
+package test;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.Stack;
+
+import mob.Pokemon;
+
+public class TestClass {
+
+	
+	//List )
+	public void method01() {
+		System.out.println("---리스트---");
+		List al = new ArrayList();
+		
+		//넣기
+		Pokemon p = new Pokemon(); //객체 아무거나 만들어서 집어넣어도 됨
+		al.add(p);
+		
+		//꺼내기
+		Object result = al.get(0);// 0번째 인덱스에 있는 요소를 꺼내온다
+		System.out.println(result);
+		
+		
+	}
+	
+	//Set
+	public void method02(){
+		System.out.println("---Set---");
+		
+		Set s = new HashSet();
+		
+		//넣기
+		s.add(new Pokemon());
+		
+		//꺼내기
+		System.out.println(s);
+		
+	}
+	
+	
+	//Map //key-value 쌍으로 데이터를 관리 (key는 중복을 허용하지 않는다.)
+	public void method03() {
+		System.out.println("---Map---");
+		
+		Map m = new HashMap();
+		
+		//넣기
+		m.put("first", new Pokemon());
+		
+		//꺼내기
+		Object result = m.get("first");
+		System.out.println(result);
+	}
+	
+	//Stack //LIFO (Last In First Out)
+	public void method04() {
+		System.out.println("---Stack---");
+		Stack s = new Stack();
+		
+		//넣기
+		s.add(new Pokemon());
+		
+		//꺼내기
+		Object result = s.pop();
+		System.out.println(result);
+		
+	}
+	
+	//Queue //FIFO (First In First Out)
+	public void method05() {
+		System.out.println("---Queue---");
+		
+		LinkedList q = new LinkedList();
+		
+		//넣기
+		q.add(new Pokemon());
+		
+		//꺼내기
+		Object result = q.poll();
+		System.out.println(result);
+	}
+	
+	
+	
+	
+}
