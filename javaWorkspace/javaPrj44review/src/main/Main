@@ -1,0 +1,38 @@
+package main;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class Main {
+
+	public static void main(String[] args) {
+		System.out.println("복습~");
+		
+		//여러개의 객체를 관리할 변수
+		List menuList = new ArrayList(); //arraylist를 만들어서 여러개의 객체를 관리
+		
+		//메뉴 객체(데이터는 아무렇게나) 여러개 만들고, 위에서 만든 컬렉션에 담기
+		Menu m1 = new Menu ("아메리카노", 3000);
+		menuList.add(m1);
+		
+		Menu m2 = new Menu ("카페라떼", 4000);
+		menuList.add(m2);
+		
+		Menu m3 = new Menu ("카푸치노", 5000);
+		menuList.add(m3);
+		//menuList.add(new Menu ("아메리카노", 3000););
+		
+		//여러개의 객체 전부 다 출력 (모든 필드 값)
+		System.out.println( menuList.get(0) );
+		System.out.println( menuList.get(0) );
+		System.out.println( menuList.get(0) );
+		
+		//여러개의 객체 전부 다 출력 (객체의 name 필드만 출력)
+		//여러개의 객체 전부 다 출력 (객체의 price 필드만 출력)
+		
+		
+		
+	} //main
+
+} //class
