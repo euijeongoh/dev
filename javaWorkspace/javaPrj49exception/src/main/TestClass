@@ -1,0 +1,41 @@
+package main;
+
+public class TestClass {
+
+	public void method01() {
+		System.out.println("method 01 start ~ !");
+		method02();
+		System.out.println("method 01 end ...");
+	}
+	
+	public void method02() {
+		System.out.println("method 02 start ~ 1");
+		int[] arr = new int [3];
+		
+		try
+		{
+			System.out.println(1111);
+			arr[7] = 10;
+			System.out.println(2222);
+		}
+		catch(Exception e) 
+		{
+			System.out.println("잡았다.");
+		}
+//		catch(ArithmeticException y) 
+//		{
+//			System.out.println("0으로 나누려는거 잡음");
+//		}
+		
+		
+		method03();
+		System.out.println("method 02 end ...");
+	}
+	
+	public void method03() {
+		System.out.println("method 03 start ~ !");
+		System.out.println("method 03 end ...");
+	}
+	
+	
+}
