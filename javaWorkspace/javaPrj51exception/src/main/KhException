@@ -1,0 +1,10 @@
+package main;
+
+public class KhException extends Exception {
+
+	public KhException() {
+		super("kh !");  //Exception안에  String타입을 전달받아 뭔가를 처리하게 된다.
+	}
+	
+	
+}
