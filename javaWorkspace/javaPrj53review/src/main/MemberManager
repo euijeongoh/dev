@@ -1,0 +1,108 @@
+package main;
+
+import java.util.HashMap;
+import java.util.Scanner;
+
+import data.Member;
+
+public class MemberManager {
+
+	//멤버변수
+	private Scanner sc = new Scanner(System.in); //변수의 타입은 Scanner 타입
+	private HashMap<String, Member>memberMap = new HashMap<String, Member>(); //<key, value>
+	//Object가 다 들어가면 안돼서 제한 걸려고 String, Member
+	//가능한 권면적인 type이 나중에 더 좋기 때문에
+	
+	//일시작
+	public void startWork() {
+		showMenu();
+		String input = scanUserString(); //String변수를 가져와서 input가지고 
+		switch(input) {
+		case "1" : join(); break;
+		case "2" : login(); break;
+		default : System.out.println("잘못고름") ;
+		}
+	}
+	
+	//메뉴 보여주기
+	public void showMenu() {
+		System.out.println("원하시는 메뉴 번호를 입력하세요");
+		System.out.println("1. 회원가입");
+		System.out.println("2. 로그인");
+		System.out.println("---------------");
+	}
+	
+	//입력받기
+	public String scanUserString() {
+		return sc.nextLine();
+	}
+	
+	//회원가입
+	public void join() {
+		System.out.println("----회원가입----");
+		
+		System.out.print("아아디 : ");
+		String id = scanUserString();
+		
+		System.out.print("비밀번호 : ");
+		String pwd = scanUserString(); //를 사용해서 pwd라는 String타입 변수에 담는 것
+		
+		System.out.print("닉네임 : ");
+		String nick = scanUserString();
+		
+		Member m = new Member(id, pwd, nick);
+		
+
+//		m.setId(id);
+//		m.setPwd(pwd);
+//		m.setNick(nick);
+		
+		//값 검증
+//		checkValidation(m);
+		
+		//멤버 객체 저장하기
+		memberMap.put(m.getId(), m);  //(아이디, 객체)
+		
+		System.out.println(m.getNick() + " 님 회원가입이 완료되었습니다 :) ");
+	}
+	
+	//값 검증
+	private void checkValidation(Member m) throws Exception {
+		
+		//아이디 검사 (예외처리한거 신경써주기)
+		checkId(m.getId());
+		
+		//비밀번호 검사
+		
+		//닉네임
+	}
+	
+	//아이디 검사
+	private void checkId(String id) throws Exception {
+		
+		if(id.length() < 4) { //아이디가 4글자보다 적으면 문제가 있다고 판단
+			throw new Exception();  //예외를 일부러 발생시킴
+		}
+	}
+
+	//로그인
+	public void login() {
+		System.out.println("----로그인----");
+		
+		System.out.print("아이디 : ");
+		String userId = scanUserString();
+		
+		System.out.println("비밀번호 : ");
+		String userPwd = scanUserString();
+		
+		Member x = memberMap.get(userId); //( )에 유저가 입력한 아이디를 집어넣고 어떤 객체를 꺼내오면 된다.
+		
+		boolean result = userId.equals(x.getId()) && userPwd.equals(x.getPwd());
+		if (result) {
+			System.out.println("로그인 성공!");
+		}else {
+			System.out.println("로그인 실패");
+		}
+	
+	}
+} //class
