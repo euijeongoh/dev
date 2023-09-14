@@ -1,0 +1,52 @@
+package main;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintStream;
+
+public class Main {
+
+	public static void main(String[] args) throws Exception {
+		System.out.println("====스트림====");
+		File f = new File("D:\\dev\\hello.txt");  //("경로 / 파일명)
+//		역슬래쉬는 하나로는 인식이 불가함
+		
+//		f.delete();  //파일 삭제
+		
+		//1btye 단위로 처리하니까 별로임
+//		FileOutputStream fos = new FileOutputStream(f); //()에 파일 타입의 객체
+//		fos.write(70);
+		
+//		FileWriter fw = new FileWriter(f);
+//		fw.write("잘가아 \n");
+//		fw.flush();  //싹 내려보낸다라고 생각하면 됨
+		
+//		PrintStream ps = new PrintStream(f);
+//		ps.print("테스트");
+		
+		//=======================================================
+		
+//		FileInputStream fis = new FileInputStream(f);
+//		for(int i = 0; i < 3; i++) {
+//			int result = fis.read(); //read타입이 int라서 변수 타입도 int라고 적기
+//			char x = (char)result; // 97을 char타입으로 바꾸면 알파벳으로 출력될 것
+//			System.out.println(x); //맨 앞글자를 가져와서 그걸 숫자로 읽어서 출력
+//		}
+		
+		FileReader fr = new FileReader(f);
+		BufferedReader br = new BufferedReader (fr); //(Reader객체)
+		
+		String result = br.readLine();  //readLine이 String
+		System.out.println(result);
+		
+		String result2 = br.readLine();  //readLine이 String
+		System.out.println(result2);
+		
+		
+	}//main
+
+}//class
