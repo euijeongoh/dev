@@ -1,0 +1,22 @@
+package main;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		System.out.println("====쓰레드====");
+		
+		//현재 쓰레드 이름 확인
+//		Thread x = Thread.currentThread();
+//		System.out.println(x.getName());
+		
+		Thread x = new Thread();  //(메소드 하나만 들어있는 객체) 반드시 run이라는 메소드 하나만 존재
+		x.start();
+		
+		
+		
+		
+		
+	} //main
+
+} //class
