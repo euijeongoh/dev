@@ -1,0 +1,168 @@
+package com.kh.app.member.controller;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import com.kh.app.member.service.MemberService;
+import com.kh.app.member.vo.MemberVo;
+
+public class MemberController {
+
+	//필드 == 멤버변수
+	private final Scanner sc;
+	private final MemberService ms;
+	
+	//기본생성자
+	public MemberController() {
+		sc = new Scanner(System.in);
+		ms = new MemberService();
+	}
+	
+	//메뉴선택
+	
+		// 회원가입
+		public void join() {
+			System.out.println("----회원가입----");
+			
+			//데이터
+			System.out.print("아이디 : ");
+			String id = sc.nextLine();
+			System.out.print("비밀번호 : ");
+			String pwd = sc.nextLine();
+			System.out.print("닉네임 : ");
+			String nick = sc.nextLine();
+			
+			MemberVo vo = new MemberVo(); //id pwd nick 을 한번에 합쳐서 vo 객체
+			vo.setId(id);
+			vo.setPwd(pwd);
+			vo.setNick(nick);
+			
+			//서비스
+			try {
+				int result = ms.join(vo); //id pwd nick 을 한번에 합쳐서 vo 객체
+				
+				//결과
+				if(result == 1) {
+					System.out.println("회원가입 성공");
+				}else {
+					throw new Exception();
+				}
+			}catch(Exception e) {
+				System.out.println("회원가입 실패");
+				e.printStackTrace();
+			}
+			
+		}
+		
+		//로그인
+		public void login() {
+			System.out.println("----로그인----");
+			
+			//데이터
+			System.out.println("아이디 : ");
+			String id = sc.nextLine();
+			System.out.print("비밀번호 : ");
+			String pwd = sc.nextLine();
+			
+			MemberVo vo = new MemberVo();
+			vo.setId(id);
+			vo.setPwd(pwd);
+			
+			//서비스
+			try {
+				MemberVo dbVo = ms.login(vo);
+				
+				//결과
+				if(dbVo != null) {
+					System.out.println("로그인 성공");
+				}else {
+					throw new Exception();
+				}
+			}catch(Exception e) {
+				System.out.println("로그인 실패");
+				e.printStackTrace();
+			}
+			
+		}
+		
+		//전체 회원목록 조회
+		public void printMemberList() {
+			System.out.println("----전체 회원 조회----");
+			
+			//데이터
+			
+			//서비스
+			try {
+				ArrayList<MemberVo> voList = ms.getMemberList();
+				
+				//결과
+				for(MemberVo vo : voList) {
+					System.out.println(vo);
+				}
+			}catch (Exception e) {
+				System.out.println("회원 목록 조회 실패");
+				e.printStackTrace();
+			}
+			
+			
+			
+		}
+		
+		//회원 탈퇴
+		public void quit() {
+			System.out.println("----회원탈퇴----");
+			
+			//데이터
+			System.out.print("아이디 : ");
+			String id = sc.nextLine();
+			System.out.print("비밀번호 : ");
+			String pwd = sc.nextLine();
+			
+			MemberVo vo = new MemberVo();
+			vo.setId(id);
+			vo.setPwd(pwd);
+			
+			//서비스
+			try {
+				int result = ms.quit(vo);
+				
+				//결과
+				if (result == 1) {
+					System.out.println("탈퇴 성공");
+				}else {
+					throw new Exception();
+				}
+			}catch(Exception e) {
+				System.out.println("탈퇴 실패");
+				e.printStackTrace();
+			}
+			
+		}
+		
+		//비밀번호 변경
+		public void editPwd() {
+			System.out.println("----비밀번호 변경----");
+			
+			//데이터
+			System.out.print("비밀번호 : ");
+			String pwd = sc.nextLine();
+			
+			MemberVo vo = new MemberVo();
+			vo.setPwd(pwd);
+			
+			//서비스
+			try {
+				int result = ms.editPwd(vo, pwd);
+				//결과
+				if(result == 1) {
+					System.out.println("변경 성공");
+				}else {
+					System.out.println("변경 실패");
+				}
+
+			}catch (Exception e) {
+				
+			}
+			
+		}
+}
