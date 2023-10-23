@@ -43,9 +43,7 @@ public class NoticeDao {
 		String sql = "UPDATE NOTICE SET TITLE = ? , MODIFY_DATE = SYSDATE WHERE NOTICE_NO = ? AND DELETE_YN = 'N'";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, vo.getTitle());
-//		pstmt.setString(2, vo.getContent());
-		pstmt.setString(3, vo.getNoticeno());
-//		pstmt.setString(4, vo.getAdminno());
+		pstmt.setString(2, vo.getNoticeno());
 		int result = pstmt.executeUpdate();
 		
 		// close
@@ -61,10 +59,8 @@ public class NoticeDao {
 		// SQL
 		String sql = "UPDATE NOTICE SET CONTENT = ? , MODIFY_DATE = SYSDATE WHERE NOTICE_NO = ? AND DELETE_YN = 'N'";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
-//		pstmt.setString(1, vo.getTitle());
-		pstmt.setString(2, vo.getContent());
-		pstmt.setString(3, vo.getNoticeno());
-//		pstmt.setString(4, vo.getAdminno());
+		pstmt.setString(1, vo.getContent());
+		pstmt.setString(2, vo.getNoticeno());
 		int result = pstmt.executeUpdate();
 		
 		// close
@@ -74,17 +70,18 @@ public class NoticeDao {
 		}
 
 
-	//공지사항 삭제
-	public int delete(Connection conn, HashMap<String, String> map) throws Exception {
+	// 공지사항 삭제
+	public int delete(Connection conn, String no) throws Exception {
 		
 		String sql = "UPDATE NOTICE SET DELETE_YN = 'Y' , MODIFY_DATE = SYSDATE WHERE NOTICE_NO = ?";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
-		pstmt.setString(1, map.get("noticeno"));
+		pstmt.setString(1, no);
 		int result = pstmt.executeUpdate();
 		
 		JDBCTemplate.close(pstmt);
 		
 		return result;
+		
 	}
 
 
@@ -121,7 +118,7 @@ public class NoticeDao {
 	}
 
 	
-	//FAQ 상세 조회 (번호)
+	//공지사항 상세 조회 (번호)
 	public NoticeVo noticeDetailByNo(Connection conn, String num) throws Exception {
 			
 		//sql
