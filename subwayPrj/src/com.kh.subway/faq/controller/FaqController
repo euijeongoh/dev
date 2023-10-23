@@ -279,7 +279,7 @@ public class FaqController {
 		}
 		
 		
-		//FAQ 제목 수정
+		//FAQ 내용 수정
 		public void contentModify() {
 			
 			try {
