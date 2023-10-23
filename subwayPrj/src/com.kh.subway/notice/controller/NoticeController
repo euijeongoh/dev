@@ -112,7 +112,7 @@ public class NoticeController {
 	public void titleModify() {
 		
 		try {
-			System.out.println("----공지사항 내용 수정----");
+			System.out.println("----공지사항 제목 수정----");
 			
 			// 로그인 체크
 			if(Main.loginAdmin == null) {
@@ -122,10 +122,10 @@ public class NoticeController {
 			// 데이터
 			System.out.print("수정할 공지사항 번호 : ");
 			String no = Main.SC.nextLine();
-			System.out.print("수정할 공지사항 제목 : ");
+//			System.out.print("수정할 공지사항 제목 : ");
 			String title = Main.SC.nextLine();
-			System.out.print("수정할 공지사항 내용 : ");
-			String content = Main.SC.nextLine();
+			System.out.print("수정할 공지사항 제목 : ");
+//			String content = Main.SC.nextLine();
 			
 			NoticeVo vo = new NoticeVo();
 			vo.setNoticeno(no);
@@ -154,7 +154,7 @@ public class NoticeController {
 	public void contentModify() {
 		
 		try {
-			System.out.println("----공지사항 제목 수정----");
+			System.out.println("----공지사항 내용 수정----");
 			
 			// 로그인 체크
 			if(Main.loginAdmin == null) {
