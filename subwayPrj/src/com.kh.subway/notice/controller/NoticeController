@@ -268,6 +268,7 @@ public class NoticeController {
 				}
 				System.out.println("--------------------------");
 				System.out.println("글번호 : " + vo.getNoticeno());
+				System.out.println("역번호 : " + vo.getStationno());
 				System.out.println("제목 : " + vo.getTitle());
 				System.out.println("조회수 : " + vo.getInqiry());
 				System.out.println("작성일시 : " + vo.getPosttime());
