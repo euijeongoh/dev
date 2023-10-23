@@ -70,38 +70,36 @@ public class NoticeDao {
 		}
 
 
-//	// 공지사항 삭제
-//	public int delete(Connection conn, String no) throws Exception {
-//		
-//		String sql = "UPDATE NOTICE SET DELETE_YN = 'Y' , MODIFY_DATE = SYSDATE WHERE NOTICE_NO = ?";
-//		PreparedStatement pstmt = conn.prepareStatement(sql);
-//		pstmt.setString(1, no);
-//		int result = pstmt.executeUpdate();
-//		
-//		JDBCTemplate.close(pstmt);
-//		
-//		return result;
-//		
-//	}
-	
-	
-	//공지사항 삭제 2
-	public int delete(Connection conn, HashMap<String, String> map) throws Exception {
+	// 공지사항 삭제
+	public int delete(Connection conn, String no) throws Exception {
 		
-		//sql
 		String sql = "UPDATE NOTICE SET DELETE_YN = 'Y' , MODIFY_DATE = SYSDATE WHERE NOTICE_NO = ? AND DELETE_YN = 'N'";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
-		pstmt.setString(1, map.get("noticeNum"));
+		pstmt.setString(1, no);
 		int result = pstmt.executeUpdate();
 		
-		//rs
-		
-		//close
 		JDBCTemplate.close(pstmt);
 		
 		return result;
-	
+		
 	}
+	
+	
+//	//공지사항 삭제 2
+//	public int delete(Connection conn, HashMap<String, String> map) throws Exception {
+//		
+//		//sql
+//		String sql = "UPDATE NOTICE SET DELETE_YN = 'Y' , MODIFY_DATE = SYSDATE WHERE NOTICE_NO = ? AND DELETE_YN = 'N'";
+//		PreparedStatement pstmt = conn.prepareStatement(sql);
+//		pstmt.setString(1, map.get("noticeNum"));
+//		int result = pstmt.executeUpdate();
+//		
+//		//close
+//		JDBCTemplate.close(pstmt);
+//		
+//		return result;
+//	
+//	}
 
 
 	//공지사항 목록조회 (최신순)
