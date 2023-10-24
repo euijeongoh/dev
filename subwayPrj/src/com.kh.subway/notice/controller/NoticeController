@@ -84,6 +84,8 @@ public class NoticeController {
 			}
 			
 			//데이터
+			System.out.println("역이름 : ");
+			String stationname = Main.SC.nextLine();
 			System.out.println("제목 : ");
 			String title = Main.SC.nextLine();
 			System.out.println("내용 : ");
@@ -92,6 +94,7 @@ public class NoticeController {
 			NoticeVo vo = new NoticeVo();
 			vo.setTitle(title);
 			vo.setContent(content);
+			vo.setStationname(stationname);
 			
 			//서비스
 			int result = service.writer(vo);
@@ -339,7 +342,16 @@ public class NoticeController {
 				}
 				
 				for(NoticeVo vo : voList) {
-					System.out.println(vo);
+					System.out.print("NO :" + vo.getNoticeno() + " ");
+					System.out.print("제목 : " + vo.getTitle());
+					System.out.println();
+					System.out.print("역이름 : " + vo.getStationname());
+					System.out.println();
+					System.out.print("작성일시 : " + vo.getPosttime());
+					System.out.println();
+					System.out.print("조회수 : " + vo.getInqiry());
+					System.out.println();
+					System.out.println("===================================");
 				}
 				
 			}catch(Exception e) {
@@ -370,7 +382,18 @@ public class NoticeController {
 				}
 				
 				for(NoticeVo vo : voList) {
-					System.out.println(vo);
+					System.out.print("NO :" + vo.getNoticeno() + " ");
+					System.out.print("제목 : " + vo.getTitle());
+					System.out.println();
+					System.out.print("내용 : " + vo.getContent());
+					System.out.println();
+					System.out.print("역이름 : " + vo.getStationname());
+					System.out.println();
+					System.out.print("작성일시 : " + vo.getPosttime());
+					System.out.println();
+					System.out.print("조회수 : " + vo.getInqiry());
+					System.out.println();
+					System.out.println("===================================");
 				}
 				
 			}catch(Exception e) {
