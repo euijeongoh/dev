@@ -1,0 +1,114 @@
+body{
+    margin: 0;
+}
+.wrap{
+    width: 100vw;
+    height: 100vh;
+}
+.main{
+    width: calc(100vw - 150px);
+    border: 1px solid black;
+    display: grid;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: yellow; 
+    padding: 15px 100px;
+}
+a {
+text-decoration: none;
+color: black;
+}
+.head_menus{
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+.head_menus li{
+    padding: 10px 30px;
+}
+.head_menus li:hover{
+    background-color:rgb(181, 241, 241);
+}
+.head_menus :nth-child(4){
+    background-color: rgb(236, 49, 49);
+}
+.head_icons{
+    display: flex;
+    list-style: none;
+}
+.head_icons li{
+    padding: 8px 40px;
+}
+section{
+    height: 100vh;
+    background: url(/레고.png);
+}
+section:before{
+    content: '';
+    background: linear-gradient(to left, black, transparent);
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    width: 70%;
+}
+#h01{
+    color: white;
+    font-size: 4em;
+    position: absolute;
+    top: 150px;
+    left: 915px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+#h02{
+    color: white;
+    font-size: 4em;
+    position: absolute;
+    top: 270px;
+    left: 1110px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+#h03{
+    color: white;
+    font-size: 1.5em;
+    position: absolute;
+    top: 450px;
+    left: 1120px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+#h04{
+    color: white;
+    font-size: 1.5em;
+    position: absolute;
+    top: 500px;
+    left: 1270px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.fr_icons{
+    display: flex;
+    list-style: none;
+    background-color: white;
+    font-size: 1.8em;
+    position: absolute;
+    top: 600px;
+    left: 1050px;
+}
+.fr_icons li{
+    padding: 10px 30px;
+    padding-left: 0;
+}
+.sc_icons{
+    display: flex;
+    list-style: none;
+    background-color: white;
+    font-size: 1.8em;
+    position: absolute;
+    top: 600px;
+    left: 1360px;
+}
+.sc_icons li{
+    padding: 10px 30px;
+    padding-left: 0;
+}
