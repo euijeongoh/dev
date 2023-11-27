@@ -151,7 +151,7 @@ header .main-list li {
     justify-content: center;
 }
 .tage01{
-    padding: 10px 630px;
+    padding: 10px 550px;
 }
 .jordan{
     padding: 10px 0px;
@@ -167,7 +167,7 @@ header .main-list li {
 .licom{
     display: flex;
     justify-content: flex-start;
-    padding: 10px 620px;
+    padding: 10px 550px;
 }
 .likeimg{
     width: 30px;
@@ -189,13 +189,13 @@ header .main-list li {
     height: 50px;
 }
 .like{
-    padding: 10px 615px;
+    padding: 10px 550px;
 }
 .review{
-    padding: 10px 615px;
+    padding: 10px 550px;
 }
 .hashtag{
-    padding: 10px 615px;
+    padding: 10px 550px;
 }
 .ht{
     color: blue;
