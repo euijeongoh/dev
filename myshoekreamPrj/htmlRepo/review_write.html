@@ -3,13 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./리뷰작성.css">
+    <link rel="stylesheet" href="../../css/ouj/review_write.css">
     <title>리뷰작성</title>
 </head>
 <body>
-    <div class="wrap">
-        <div class="main"></div>
-        <div class="header"></div>
+    <header>
+        <div class="header-inner">
+            <div class="top-list">
+                <ul>
+                    <li><a href="">고객센터</a></li>
+                    <li><a href="">마이페이지</a></li>
+                    <li><a href="">관심</a></li>
+                    <li><a>알림</a></li>
+                    <li><a href="">로그인</a></li>
+                </ul>
+            </div>
+            <div class="main-list">
+                <div class="logo-area">
+                    <a href="">
+                    <img src="./logo.svg">
+                    </a>
+                </div>
+                <div class="head-list">
+                    <ul>
+                        <li><a href="">HOME</a></li>
+                        <li><a href="">SHOP</a></li>
+                        <li id="search-btn"><a><img src="./searchIcon.png"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </header>
         <div class="write_review">
             <p><b>상품 후기 작성</b></p>
         </div>
@@ -52,3 +76,6 @@
     </div>
 </body>
 </html>
+<script>
+    const searchBtn = document.querySelector("#search-btn");
+</script>
