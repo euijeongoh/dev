@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/ouj/review_board.css">
+    <link rel="stylesheet" href="../../css/ouj/review_comment.css">
+    <link rel="stylesheet" href="../../common/userheader.css">
+    <link rel="stylesheet" href="../../common/footer.css">
+    <title>리뷰댓글</title>
+   
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="top-list">
+                <ul>
+                    <li><a href="">고객센터</a></li>
+                    <li><a href="">마이페이지</a></li>
+                    <li><a href="">관심</a></li>
+                    <li><a>알림</a></li>
+                    <li><a href="">로그인</a></li>
+                </ul>
+            </div>
+            <div class="main-list">
+                <div class="logo-area">
+                    <a href="">
+                    <img src="../../common/logo.svg">
+                    </a>
+                </div>
+                <div class="head-list">
+                    <ul>
+                        <li><a href="">HOME</a></li>
+                        <li><a href="">SHOP</a></li>
+                        <li id="search-btn"><a><img src="../../common/searchIcon.png"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </header>
+
+        <br>
+
+
+    <div class="comment_wrap">
+        <div class="nocomment">
+            <div class="commnet_x">
+                <a href="">
+                    <img src="../ouj/img/comment_x.png" alt="X" class="x">
+                </a>
+            </div>
+            <div class="comment_xwrite">
+                <p class="xx"><h3>댓글</h3></p>
+            </div>
+        </div>
+    
+        <div class="profile">
+            <div class="profiless">
+                <div>
+                    <a href="">
+                        <img src="../ouj/img/물결.png" alt="프사" class="profile_img">
+                    </a>
+                </div>  
+                <div class="profile_detail">
+                    <div>
+                        <a href="">
+                            <p class="nick"><b>nickname</b></p>
+                        </a>
+                    </div>
+                    <div>
+                        <p class="date01">2023년 2월 9일</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hashtag">
+                <a href=""><p id="brand">#조던</p></a>
+                <a href=""><p id="brand">#나이키</p></a>
+            </div>
+        </div>
+
+        <div class="comment_box">
+            <div class="wcomment_profile">
+                <img src="../ouj/img/profile_img.png" alt="임시프사" class="exprofile">
+            </div>
+            <div class="wcomment">
+                <textarea name="comment" id="write_comment"
+                placeholder="   댓글을 남겨주세요!"></textarea>
+            </div>
+        </div>
+
+        <div class="comment_list">
+            <div class="comment_list01">
+                <div class="kitty">
+                    <a href="">
+                        <img src="../ouj/img/kitty.png" alt="키티프사" class="profile_kitty">
+                    </a>
+                </div>  
+                <div class="list_name_date">
+                    <div>
+                        <a href="">
+                            <p class="commnet_nick"><b>ejeong</b></p>
+                        </a>
+                    </div>
+                    <div>
+                        <p class="date02">2023년 2월 13일</p>
+                    </div>
+                </div>
+            </div>
+            <div class="airforce">
+                <p>혹시 에어포스 240이면 조던 몇신어야 하나요? ㅠㅠ</p>
+            </div>
+            <div>
+                <a href=""><img src="./img/like.png" alt="좋아요"></a>
+            </div>
+        </div>
+
+        <div class="comment_list2">
+            <div class="comment_list02">
+                <div class="kitty02">
+                    <a href="">
+                        <img src="" alt="프사" class="profile_kitty2">
+                    </a>
+                </div>  
+                <div class="list_name_date">
+                    <div>
+                        <a href="">
+                            <p class="melomance"><b>melomance</b></p>
+                        </a>
+                    </div>
+                    <div>
+                        <p class="date03">2023년 4월 17일</p>
+                    </div>
+                </div>
+            </div>
+            <div class="meto">
+                <p>나두우 이거 살걸....</p>
+            </div>
+            <div>
+                <a href=""><img src="./img/like.png" alt="좋아요"></a>
+            </div>
+        </div>
+    
+    </div>
+
+
+    <footer>
+        <div class="box1"></div>
+        <div class="box2">
+            <div></div>
+            <div>고객센터 1588-4444</div>
+        </div>
+        <div class="box3">
+            <div class="left_bar">
+                <div>고객지원</div>
+                <div>공지사항</div>
+                <div>1:1문의</div>
+                <div>상품 등록 문의</div>
+            </div>
+            <div class="icons">
+                <div>
+                    <img src="../../common/footer_img/인별.png"  alt="인별">
+                </div>
+                <div>
+                    <img src="../../common/footer_img/페북.png" alt="페북">
+                </div>
+                <div>
+                    <img src="../../common/footer_img/인별.png" alt="카톡">
+                </div>
+            </div>
+            <div></div>
+            <div class="faq">
+                <button>자주 묻는 질문</button>
+            </div>
+        </div>
+        <div class="box4"></div>
+    </footer>
+    
+</body>
+</html>
+<script>
+    const searchBtn = document.querySelector("#search-btn");
+</script>
