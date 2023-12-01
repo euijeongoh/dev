@@ -100,7 +100,7 @@ header .main-list li {
 .nocomment{
     display: flex;
     justify-content: flex-start;
-    height: 100px;
+    height: 70px;
     /* background-color: aliceblue; */
 }
 .x{
@@ -171,7 +171,7 @@ header .main-list li {
 .wcomment{
     border-radius: 10px;
     margin-left: 10px;
-    /* margin-top: 10px; */
+    margin-top: 5px;
     width: 100%;
     /* background-color: orange; */
 }
@@ -186,6 +186,7 @@ header .main-list li {
     /* margin-left: 10px; */
 }
 .wcomment_profile{
+    margin-top: 4px;
     /* background-color: rebeccapurple; */
 }
 #write_comment{
@@ -194,6 +195,10 @@ header .main-list li {
     width: 500px;
     margin-top: 15px;
     /* height: 300px; */
+}
+.comment_list_box{
+    height: 600px;
+    /* background-color: brown; */
 }
 /* .comment_list{
     display: flex; */
@@ -311,6 +316,13 @@ header .main-list li {
     cursor: pointer;
     margin-top: 15px;
     border: 1px solid lightgray;
+
+    width: 30px;
+    height: 30px;
+    border-radius: 70%;
+    overflow: hidden;
+    cursor: pointer;
+    margin-top: 15px;
     /* display: flex; */
     /* justify-content: center; */
     /* margin-top: 5px; */
