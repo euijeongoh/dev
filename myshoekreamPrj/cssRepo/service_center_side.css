@@ -3,11 +3,6 @@
     padding: 3px 0px;
     list-style: none;
 }
-.side-body {
-    display: flex;
-    width: 1200px;
-    justify-content: space-between;
-}
 .service-container {
     /* width: 1200px;
     margin: auto;
@@ -17,6 +12,7 @@
     margin-left: 20px; /* 오른쪽 여백 추가 */
     width: 180px;
     font-size: 22px;
+    /* background-color: aqua; */
 }
 
 .menu_container {
@@ -44,6 +40,9 @@
     text-decoration: none;
     color: lightgray;
 }
+.notice #title :hover{
+    color: black;
+}
 
 .faq {
     font-size: 16px;
@@ -56,6 +55,9 @@
 .faq #title a{
    text-decoration: none;
     color: lightgray; 
+}
+.faq #title :hover{
+    color: black;
 }
 
 .qna {
@@ -71,6 +73,9 @@
      color: lightgray; 
      /* font-size: medium */
  }
+ .qna #title :hover{
+    color: black;
+}
 /* .first{
     width: 160px;
     display: flex;
@@ -87,4 +92,6 @@
     text-decoration: none;
      color: lightgray; 
  }
-
+ .request #title :hover{
+    color: black;
+}
