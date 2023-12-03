@@ -3,12 +3,20 @@
     padding: 3px 0px;
     list-style: none;
 }
-
-.service-container {
+.side-body {
+    display: flex;
     width: 1200px;
+    justify-content: space-between;
+}
+.service-container {
+    /* width: 1200px;
     margin: auto;
     display: flex;
-    padding: 40px 40px 160px 40px;
+    padding: 40px 40px 160px 40px; */
+    margin-right: auto;/*필요시 제거*/
+    margin-left: 20px; /* 오른쪽 여백 추가 */
+    width: 180px;
+    font-size: 22px;
 }
 
 .menu_container {
