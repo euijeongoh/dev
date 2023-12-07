@@ -126,6 +126,7 @@ header .main-list li {
     width: 200px;
     margin: 15px 60px;
     display: block;
+    border: 1px solid lightgray;
 }
 .jordan{
     display: block;
@@ -147,7 +148,7 @@ header .main-list li {
 }
 .star{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     height: 80px;
     /* background-color: yellow; */
 }
@@ -156,17 +157,29 @@ header .main-list li {
     /* background-color: aqua; */
 }
 #wstar{
-    margin: 25px 100px;
+    margin: 30px 50px;
     font-size: large;
 }
 .starjom{ 
+    /* margin: auto;
+    width: 50px; */
     margin: auto;
+    /* margin-right: 150px; */
     /* background-color: salmon; */
 }
-#starjom{
-    margin: 15px 60px;
-    height: 60px;
-    width: 160px;
+.stars {
+    display: inline-block;
+    font-size: 24px;
+    cursor: pointer;
+    /* margin-top: 0px; */
+}
+
+.stars:hover {
+    color: orange;
+}
+
+.selected {
+    color: orange;
 }
 .ignition{
     display: flex;
@@ -182,22 +195,25 @@ header .main-list li {
     margin: 30px 80px;
     font-size: large;
 }
-.ignition ul{
+.three{
+    /* background-color: aqua; */
+}
+.three ul{
     display: flex;
     justify-content: space-around;
     /* align-items: center; */
-    width: 90%;
+    width: 95%;
     height: 60%;
     border-radius: 20px;
     border: 1px solid lightgray;
-    margin: 20px 40px;
+    margin: 20px 30px;
 }
-.ignition li{
+.three li{
     display: block;
     justify-content: center;
     margin: 10px 10px;
 }
-.ignition button{
+.three li button{
     background-color: white;
     color: lightgray;
     border: none;
@@ -208,10 +224,10 @@ header .main-list li {
 /* .ignition button:nth-child(3){
     width: 900px;
 } */
-.ignition button :hover{
+/* .ignition button :hover{
     color: black;
     /* background-color: black; */
-}
+} */
 .content{
     /* background-color: antiquewhite; */
     /* display: ; */
@@ -283,12 +299,15 @@ header .main-list li {
     margin: auto;
     /* background-color: aliceblue; */
 }
-.update button{
-    justify-content:space-evenly;
+/* .update button{ */
+    /* justify-content:space-evenly;
     background-color: white;
     color: black;
-    font-size: medium;
+    font-size: medium; */
     /* display: block; */
+/* } */
+.update input{
+    background-color: white;
 }
 #update_detail{
     text-align: center;
