@@ -35,7 +35,7 @@
                 </div>
             </div>
 
-        <form action="/shoekream/review/write" method="post" id="reviewForm">
+        <form action="/shoekream/review/write" method="post" id="reviewForm" enctype="multipart/form-data">
             <div class="ggg">
                 <div class="ignition">
                     <div class="wignition">
@@ -50,12 +50,6 @@
                     </div>
                 </div>
             </div>
-            <ul>
-    <% for (ReviewVo vo : reviewVoList) { %>
-        <li><%= vo.getComfortNo() %></li>
-    <% } %>
-</ul>
-       
             
             <br><br>
             <div class="content">
@@ -81,7 +75,7 @@
             <div class="update">
                 <ul>
                     <li id="update_detail"><input type="submit" value="올리기"></li>
-                    <li id="update_detail"><input type="submit" value="취소"></li>
+                    <li id="update_detail"><input type="reset" value="초기화" onclick="resetForm(event)"></li>
                 </ul>
             </div>
         </form>
@@ -94,7 +88,8 @@
 </html>
 
 <!-- 파일 선택 시 이미지 미리보기 -->
-	<script type="text/javascript">
+<script type="text/javascript">
+
     // 파일 선택 시 미리보기 함수
     function previewImage(event) {
         var reader = new FileReader();
@@ -113,27 +108,42 @@
                 alert('이미지 파일을 선택해주세요.');
             }
         }
-    };
+    }
 
     // 폼 제출 함수
     function submitReviewForm() {
         var form = document.getElementById('reviewForm');
         form.submit();
     }
-   
-	
-}
-    
-    function checkRadio(){
-    	if(document.getElementById("comfort-button").value == "1"){
-    	form.flag["1"].selected
-    	}else{
-    	form.flag["1"].selected
-    	}
-    	}
+
+    // 착화감 버튼 클릭 이벤트 처리
+    const comfortButtons = document.querySelectorAll('.comfort-button');
+    comfortButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            comfortButtons.forEach(btn => btn.classList.remove('selected'));
+            this.classList.add('selected');
+            const selectedComfort = this.getAttribute('data-comfort');
+            console.log(`선택된 착화감: ${selectedComfort}`);
+        });
+    });
+
+    function resetForm(event) {
+        // 기본 동작 막기
+        event.preventDefault();
+
+        // form 요소를 ID로 찾아옴
+        var form = document.getElementById('reviewForm');
+        
+        // form을 리셋 (내용 초기화)
+        form.reset();
+        
+        // 이미지 미리보기도 초기화
+        document.getElementById('reviewpng').src = '#';
+    }
 </script>
 
-   
+
+
 </script>
 
 
