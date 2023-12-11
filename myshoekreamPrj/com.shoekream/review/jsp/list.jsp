@@ -5,80 +5,80 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/shoekream/resources/css/common/header.css"> 
 <link rel="stylesheet" href="/shoekream/resources/css/review/list.css">
 </head>
 <body>
 <%@ include file="/WEB-INF/views/common/header.jsp" %>
 
-<div class="user_top">
-            <div class="profile_img">
-                <img src="../../html/ouj/img/물결.png" alt="프로필사진" class="profile_img">
-                <div class="profile_info_box">
-                    <ul>
-                        <li><b>helloprofile</b></li>
-                        <br>
-                        <li>홍길동</li>
-                    </ul>
-                    <!-- <div class="info01">
-                        <p><b>h1h110</b></p>
-                    </div>
-                    <div class="info02">
-                        <p class="name">홍길동</p>
-                    </div> -->
-                </div>
+
+<div class="abcd"> </div>
+
+        <div class="style_wrap">
+            <div class="style_header">
+                <h2>STYLE</h2>
             </div>
-        </div>
-        <br>
-        <div class="review-container">
-            <div class="boardtap">
-                <p class="board"><b>게시물</b></p>
-            </div>
+            <div class="abcd"> </div>
             <div class="feed">
                 <div class="listphoto">
                     <div class="one">
-                        <img src="../ouj/img/reviewlist02.png" alt="사진02" class="photo">
+                        <a href="/shoekream/review/detail">
+                            <img src="/shoekream/resources/img/review/picture.png" alt="사진01" class="photo3">
+                        </a>
                         <div class="detail">
+                            <a href="">
+                                <img src="/shoekream/resources/img/review/wave.png" alt="wave" class="wave">
+                            </a>
+                            <div class="text2">
+                            <p>역시 예뻐요!
+                            <br>반사이즈 업 추천드려요!</p>
+                            </div>  
                             <div>
-                                <img src="../ouj/img/물결.png" alt="물결프사" class="wave">
-                            </div>
-                            <div>
-                                    <img src="../ouj/img/like.png" alt="좋아요" class="likey">  
+                                <a href="">
+                                    <img src="/shoekream/resources/img/review/like.png" alt="좋아요" class="likey">  
+                                </a>
                             </div>
                         </div>
                     </div>
 
                     <div class="one">
-                        <img src="../ouj/img/reviewlist02.png" alt="사진02" class="photo">
+                        <img src="/shoekream/resources/img/review/reviewlist02.png" alt="사진02" class="photo4">
                         <div class="detail">
+                            <a href="">
+                                <img src="/shoekream/resources/img/review/profile01.png" alt="wave" class="wave">
+                            </a>                            
                             <div>
-                                <img src="../ouj/img/물결.png" alt="물결프사" class="wave">
-                            </div>
-                            <div>
-                                    <img src="../ouj/img/like.png" alt="좋아요" class="likey">  
+                                <a href="">
+                                    <img src="/shoekream/resources/img/review/like.png" alt="좋아요" class="likey">  
+                                </a>                           
                             </div>
                         </div>
                     </div>
 
                     <div class="one">
-                        <img src="../ouj/img/reviewlist03.png" alt="사진03" class="photo">
+                        <img src="/shoekream/resources/img/review/reviewlist03.png" alt="사진01" class="photo5">
                         <div class="detail">
+                            <a href="">
+                                <img src="/shoekream/resources/img/review/profile02.png" alt="wave" class="wave">
+                            </a>                            
                             <div>
-                                <img src="../ouj/img/물결.png" alt="물결프사" class="wave">
-                            </div>
-                            <div>
-                                <img src="../ouj/img/like.png" alt="좋아요" class="likey">  
+                                <a href="">
+                                    <img src="/shoekream/resources/img/review/like.png" alt="좋아요" class="likey">  
+                                </a>                           
                             </div>
                         </div>
                     </div>
 
                     <div class="one">
-                        <img src="../ouj/img/reviewlist04.png" alt="사진04" class="photo">
+                        <img src="/shoekream/resources/img/review/mylist02.png" alt="사진01" class="photo2">
                         <div class="detail">
+                            <a href="">
+                                <img src="/shoekream/resources/img/review/profile03.png" alt="wave" class="wave">
+                            </a>                            
                             <div>
-                                <img src="../ouj/img/물결.png" alt="물결프사" class="wave">
-                            </div>
-                            <div>
-                                <img src="../ouj/img/like.png" alt="좋아요" class="likey">  
+                                <a href="">
+                                    <img src="/shoekream/resources/img/review/like.png" alt="좋아요" class="likey">  
+                                </a>                            
                             </div>
                         </div>
                     </div>
@@ -87,49 +87,68 @@
 
                 <div class="listphoto2">
                     <div class="one">
-                        <img src="../ouj/img/reviewlist01.png" alt="사진01" class="photo">
+                        <img src="/shoekream/resources/img/review/vans01.png" alt="사진01" class="photo3">
                         <div class="detail">
+                            <a href="">
+                                <img src="/shoekream/resources/img/review/profile04.png" alt="wave" class="wave">
+                            </a>                            
                             <div>
-                                <img src="../ouj/img/물결.png" alt="물결프사" class="wave">
-                            </div>
-                            <div>
-                                <img src="../ouj/img/like.png" alt="좋아요" class="likey">
+                                <a href="">
+                                    <img src="/shoekream/resources/img/review/like.png" alt="좋아요" class="likey">  
+                                </a>                            
                             </div>
                         </div>
                     </div>
 
                     <div class="one">
-                        <img src="../ouj/img/reviewlist02.png" alt="사진01" class="photo">
+                        <img src="/shoekream/resources/img/review/polo01.png" alt="사진01" class="photo4">
                         <div class="detail">
+                            <a href="">
+                                <img src="/shoekream/resources/img/review/wave.png" alt="wave" class="wave">
+                            </a>    
+                            <div class="text">
+                            <p>#폴로#겨울#따뜻행
+                            <br> 다들 감기 조심</p>
+                            </div>                          
                             <div>
-                                <img src="../ouj/img/물결.png" alt="물결프사" class="wave">
-                            </div>
-                            <div>
-                                <img src="../ouj/img/like.png" alt="좋아요" class="likey">
+                                <a href="">
+                                    <img src="/shoekream/resources/img/review/like.png" alt="좋아요" class="likey">  
+                                </a>                            
                             </div>
                         </div>
                     </div>
 
                     <div class="one">
-                        <img src="../ouj/img/reviewlist03.png" alt="사진01" class="photo">
+                        <img src="/shoekream/resources/img/review/prada01.png" alt="사진01" class="photo5">
                         <div class="detail">
+                            <a href="">
+                                <img src="/shoekream/resources/img/review/profile_img.png" alt="wave" class="wave">
+                            </a>
+                            <div class="text">
+                            <p>나의 첫 푸라닭 아니고
+                            <br>#프라다 #존예</p>
+                            </div>                              
                             <div>
-                                <img src="../ouj/img/물결.png" alt="물결프사" class="wave">
-                            </div>
-                            <div>
-                                <img src="../ouj/img/like.png" alt="좋아요" class="likey">
+                                <a href="">
+                                    <img src="/shoekream/resources/img/review/like.png" alt="좋아요" class="likey">  
+                                </a>                            
                             </div>
                         </div>
                     </div>
 
                     <div class="one">
-                        <img src="../ouj/img/reviewlist04.png" alt="사진01" class="photo">
+                        <img src="/shoekream/resources/img/review/nike01.png" alt="사진01" class="photo2">
                         <div class="detail">
+                            <a href="">
+                                <img src="/shoekream/resources/img/review/profile_img.png" alt="wave" class="wave">
+                            </a>
+                            <div class="text">
+                            <p>눈에 잘 띄네용 굿</p>
+                            </div>                            
                             <div>
-                                <img src="../ouj/img/물결.png" alt="물결프사" class="wave">
-                            </div>
-                            <div>
-                                <img src="../ouj/img/like.png" alt="좋아요" class="likey">
+                                <a href="">
+                                    <img src="/shoekream/resources/img/review/like.png" alt="좋아요" class="likey">  
+                                </a>                            
                             </div>
                         </div>
                     </div>
@@ -137,49 +156,66 @@
 
                 <div class="listphoto3">
                     <div class="one">
-                        <img src="../ouj/img/reviewlist01.png" alt="사진01" class="photo">
+                        <img src="/shoekream/resources/img/review/vans03.png" alt="사진01" class="photo">
                         <div class="detail">
+                            <a href="">
+                                <img src="/shoekream/resources/img/review/profile05.png" alt="wave" class="wave">
+                            </a>       
+                            <div class="text">
+                            <p>색감맛집은 #반스</p>
+                            </div>                     
                             <div>
-                                <img src="../ouj/img/물결.png" alt="물결프사" class="wave">
+                                <a href="">
+                                    <img src="/shoekream/resources/img/review/like.png" alt="좋아요" class="likey">  
+                                </a>                            
                             </div>
+                            <br>
+                            
+                        </div>
+                    </div>
+
+                    <div class="one">
+                        <img src="/shoekream/resources/img/review/reviewlist05.png" alt="사진01" class="photo4">
+                        <div class="detail">
+                            <a href="">
+                                <img src="/shoekream/resources/img/review/profile06.png" alt="wave" class="wave">
+                            </a>                            
                             <div>
-                                <img src="../ouj/img/like.png" alt="좋아요" class="likey">
+                                <a href="">
+                                    <img src="/shoekream/resources/img/review/like.png" alt="좋아요" class="likey">  
+                                </a>                            
                             </div>
                         </div>
                     </div>
 
                     <div class="one">
-                        <img src="../ouj/img/reviewlist01.png" alt="사진01" class="photo">
+                        <img src="/shoekream/resources/img/review/polo03.png" alt="사진01" class="photo">
                         <div class="detail">
+                            <a href="">
+                                <img src="/shoekream/resources/img/review/wave.png" alt="wave" class="wave">
+                            </a>                            
                             <div>
-                                <img src="../ouj/img/물결.png" alt="물결프사" class="wave">
-                            </div>
-                            <div>
-                                <img src="../ouj/img/like.png" alt="좋아요" class="likey">
+                                <a href="">
+                                    <img src="/shoekream/resources/img/review/like.png" alt="좋아요" class="likey">  
+                                </a>                            
                             </div>
                         </div>
                     </div>
 
                     <div class="one">
-                        <img src="../ouj/img/reviewlist01.png" alt="사진01" class="photo">
+                        <img src="/shoekream/resources/img/review/reviewlist06.png" alt="사진01" class="photo3">
                         <div class="detail">
+                            <a href="">
+                                <img src="/shoekream/resources/img/review/profile07j.png" alt="wave" class="wave">
+                            </a>
+                            <div class="text2">
+                            <p>신발 뭐살지 모르겠으면
+                            <br>일단 뉴발 그레이 ㄱ</p>
+                            </div>                              
                             <div>
-                                <img src="../ouj/img/물결.png" alt="물결프사" class="wave">
-                            </div>
-                            <div>
-                                <img src="../ouj/img/like.png" alt="좋아요" class="likey">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="one">
-                        <img src="../ouj/img/reviewlist01.png" alt="사진01" class="photo">
-                        <div class="detail">
-                            <div>
-                                <img src="../ouj/img/물결.png" alt="물결프사" class="wave">
-                            </div>
-                            <div>
-                                <img src="../ouj/img/like.png" alt="좋아요" class="likey">
+                                <a href="">
+                                    <img src="/shoekream/resources/img/review/like.png" alt="좋아요" class="likey">  
+                                </a>                            
                             </div>
                         </div>
                     </div>
@@ -187,55 +223,73 @@
 
                 <div class="listphoto4">
                     <div class="one">
-                        <img src="../ouj/img/reviewlist01.png" alt="사진01" class="photo">
+                        <img src="/shoekream/resources/img/review/vans04.png" alt="사진01" class="photo">
                         <div class="detail">
+                            <a href="">
+                                <img src="/shoekream/resources/img/review/profile_img.png" alt="wave" class="wave">
+                            </a>                            
                             <div>
-                                <img src="../ouj/img/물결.png" alt="물결프사" class="wave">
-                            </div>
-                            <div>
-                                <img src="../ouj/img/like.png" alt="좋아요" class="likey">
+                                <a href="">
+                                    <img src="/shoekream/resources/img/review/like.png" alt="좋아요" class="likey">  
+                                </a>                            
                             </div>
                         </div>
                     </div>
 
                     <div class="one">
-                        <img src="../ouj/img/reviewlist01.png" alt="사진01" class="photo">
+                        <img src="/shoekream/resources/img/review/list01.png" alt="사진01" class="photo4">
                         <div class="detail">
+                            <a href="">
+                                <img src="/shoekream/resources/img/review/wave.png" alt="wave" class="wave">
+                            </a>
+                            <div class="text">
+                            <p>보라보라보라돌이</p>
+                            </div>                            
                             <div>
-                                <img src="../ouj/img/물결.png" alt="물결프사" class="wave">
-                            </div>
-                            <div>
-                                <img src="../ouj/img/like.png" alt="좋아요" class="likey">
+                                <a href="">
+                                    <img src="/shoekream/resources/img/review/like.png" alt="좋아요" class="likey">  
+                                </a>                            
                             </div>
                         </div>
                     </div>
 
                     <div class="one">
-                        <img src="../ouj/img/reviewlist01.png" alt="사진01" class="photo">
+                        <img src="/shoekream/resources/img/review/vans05.png" alt="사진01" class="photo"5>
                         <div class="detail">
+                            <a href="">
+                                <img src="/shoekream/resources/img/review/profile_img.png" alt="wave" class="wave">
+                            </a>
+                            <div class="text">
+                            <p>운동할 때 신어야지</p>
+                            </div>                             
                             <div>
-                                <img src="../ouj/img/물결.png" alt="물결프사" class="wave">
-                            </div>
-                            <div>
-                                <img src="../ouj/img/like.png" alt="좋아요" class="likey">
+                                <a href="">
+                                    <img src="/shoekream/resources/img/review/like.png" alt="좋아요" class="likey">  
+                                </a>                            
                             </div>
                         </div>
                     </div>
 
                     <div class="one">
-                        <img src="../ouj/img/reviewlist01.png" alt="사진01" class="photo">
+                        <img src="/shoekream/resources/img/review/reviewlist01.png" alt="사진01" class="photo2">
                         <div class="detail">
+                            <a href="">
+                                <img src="/shoekream/resources/img/review/wave.png" alt="wave" class="wave">
+                            </a>                            
                             <div>
-                                <img src="../ouj/img/물결.png" alt="물결프사" class="wave">
-                            </div>
-                            <div>
-                                <img src="../ouj/img/like.png" alt="좋아요" class="likey">
+                                <a href="">
+                                    <img src="/shoekream/resources/img/review/like.png" alt="좋아요" class="likey">  
+                                </a>                            
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="abcd"> </div>
+        
+        <%@ include file="/WEB-INF/views/common/footer.jsp"%>
 
 </body>
 </html>
