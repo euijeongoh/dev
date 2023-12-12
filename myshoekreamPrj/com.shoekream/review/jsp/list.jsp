@@ -1,5 +1,15 @@
+<%@page import="com.shoekream.review.vo.ReviewProductVo"%>
+<%@page import="com.shoekream.admin.vo.EnrollProductVo"%>
+<%@page import="com.shoekream.review.vo.ReviewVo"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    <%
+    	List<ReviewVo> reviewVoList = (List<ReviewVo>)request.getAttribute("ReviewVoList");
+    	EnrollProductVo productVo = (EnrollProductVo) request.getAttribute("productVo");
+    	ReviewProductVo reviewVo = (ReviewProductVo) request.getAttribute("reviewVo");
+    %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,7 +56,11 @@
                         <div class="detail">
                             <a href="">
                                 <img src="/shoekream/resources/img/review/profile01.png" alt="wave" class="wave">
-                            </a>                            
+                            </a> 
+                            <div class="text">
+                            <p>보들보들 예뿌다
+                            <br>사이즈는 230!</p>
+                            </div>                                           
                             <div>
                                 <a href="">
                                     <img src="/shoekream/resources/img/review/like.png" alt="좋아요" class="likey">  
@@ -74,7 +88,10 @@
                         <div class="detail">
                             <a href="">
                                 <img src="/shoekream/resources/img/review/profile03.png" alt="wave" class="wave">
-                            </a>                            
+                            </a> 
+                            <div class="text">
+                            <p>남찡구랑 데이트</p>
+                            </div>                                           
                             <div>
                                 <a href="">
                                     <img src="/shoekream/resources/img/review/like.png" alt="좋아요" class="likey">  
@@ -91,7 +108,10 @@
                         <div class="detail">
                             <a href="">
                                 <img src="/shoekream/resources/img/review/profile04.png" alt="wave" class="wave">
-                            </a>                            
+                            </a> 
+                            <div class="text">
+                            <p>살말살말사길잘했다</p>
+                            </div>                                           
                             <div>
                                 <a href="">
                                     <img src="/shoekream/resources/img/review/like.png" alt="좋아요" class="likey">  
@@ -179,7 +199,10 @@
                         <div class="detail">
                             <a href="">
                                 <img src="/shoekream/resources/img/review/profile06.png" alt="wave" class="wave">
-                            </a>                            
+                            </a>  
+                            <div class="text">
+                            <p>핑쿠핑쿠한 내 신발</p>
+                            </div>                                          
                             <div>
                                 <a href="">
                                     <img src="/shoekream/resources/img/review/like.png" alt="좋아요" class="likey">  
@@ -275,7 +298,10 @@
                         <div class="detail">
                             <a href="">
                                 <img src="/shoekream/resources/img/review/wave.png" alt="wave" class="wave">
-                            </a>                            
+                            </a> 
+                            <div class="text">
+                            <p>내 신발 자랑하기</p>
+                            </div>                                           
                             <div>
                                 <a href="">
                                     <img src="/shoekream/resources/img/review/like.png" alt="좋아요" class="likey">  
@@ -290,6 +316,19 @@
         <div class="abcd"> </div>
         
         <%@ include file="/WEB-INF/views/common/footer.jsp"%>
+        <script>
+    // 좋아요 이미지에 대한 클릭 이벤트를 모두 찾아서 처리합니다.
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const likeImages = document.querySelectorAll('.likey');
+        likeImages.forEach(image => {
+            image.addEventListener('click', function() {
+                // 클릭된 이미지의 src 속성을 변경합니다.
+                image.src = '/shoekream/resources/img/review/blacklike.png'; // 업로드한 검은색 하트 이미지 경로로 변경해야 합니다.
+            });
+        });
+    });
+</script>
+        
 
 </body>
 </html>
