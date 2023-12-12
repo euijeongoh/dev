@@ -1,3 +1,4 @@
+<%@page import="com.shoekream.review.vo.ReviewProductVo"%>
 <%@page import="com.shoekream.admin.vo.EnrollProductVo"%>
 <%@page import="com.shoekream.review.vo.ReviewVo"%>
 <%@page import="java.util.List"%>
@@ -5,7 +6,6 @@
     pageEncoding="UTF-8"%>
     
     <%
-    	List<ReviewVo> reviewVoList = (List<ReviewVo>)request.getAttribute("ReviewVoList");
     	EnrollProductVo productVo = (EnrollProductVo) request.getAttribute("productVo");
     %>
     
@@ -28,8 +28,9 @@
             </div>
             <br>
             <div class="picjor">
+             <input type="file" id="file-input" accept="image/*" onchange="previewImage(event)">
                 <div class="picture">
-                    <img src="/shoekream/resources/img/review/tage_img.png" alt="상품이미지" class="picture_img">
+                    <img src="" alt="" class="picture_img">
                 </div>
                 <div class="jordan">
                     <p class="jordan_eg"><b><%=productVo.getProductName() %></b></p>
@@ -38,6 +39,7 @@
             </div>
 
         <form action="/shoekream/review/write" method="post" id="reviewForm" enctype="multipart/form-data">
+            
             <div class="ggg">
                 <div class="ignition">
                     <div class="wignition">
@@ -64,7 +66,7 @@
         
             <div class="upload">
                 <p id="wupload"><b>사진 업로드</b></p>
-                <input type="file" id="file-input" accept="image/*" onchange="previewImage(event)">
+                <input type="file" id="file-input" name="f" accept="image/*" onchange="previewImage(event)">
                 <div>
                     <div class="upload_picture">
                         <img src="" alt="" id="reviewpng">
@@ -80,6 +82,10 @@
                     <li id="update_detail"><input type="reset" value="초기화" onclick="resetForm(event)"></li>
                 </ul>
             </div>
+            
+            
+            
+            
         </form>
             
         </div>
@@ -143,10 +149,5 @@
         document.getElementById('reviewpng').src = '#';
     }
 </script>
-
-
-
-</script>
-
 
 
