@@ -8,7 +8,9 @@
     <%
     	List<ReviewVo> reviewVoList = (List<ReviewVo>)request.getAttribute("ReviewVoList");
     	EnrollProductVo productVo = (EnrollProductVo) request.getAttribute("productVo");
-    	ReviewProductVo reviewVo = (ReviewProductVo) request.getAttribute("reviewVo");
+    	ReviewProductVo reviewProductVo = (ReviewProductVo) request.getAttribute("reviewProductVo");
+    	ReviewVo reviewVo = (ReviewVo) request.getAttribute("reviewVo");
+    	
     %>
 <!DOCTYPE html>
 <html>
@@ -40,8 +42,8 @@
             </div>
             
             <div class="user_button">
-                <a href="#"><p id="click">수정</p></a>
-                <a href="#"><p id="click">삭제</p></a>
+                <button onclick="location.href='/shoekream/review/edit?no=<%= reviewVo.getReviewNo() %>'"><p id="click">수정</p></button>
+                <button onclick="location.href='/shoekream/review/delete?no=<%= reviewVo.getReviewNo() %>'"><p id="click">삭제</p></button>
             </div>
 
 
