@@ -8,7 +8,7 @@
     pageEncoding="UTF-8"%>
     
      <%
- 	List<ReviewVo> reviewVoList = (List<ReviewVo>)request.getAttribute("reviewVoList");
+ 		List<ReviewVo> reviewVoList = (List<ReviewVo>)request.getAttribute("reviewVoList");
     	EnrollProductVo productVo = (EnrollProductVo) request.getAttribute("productVo");
     	ReviewProductVo reviewVo = (ReviewProductVo) request.getAttribute("reviewVo");
 
