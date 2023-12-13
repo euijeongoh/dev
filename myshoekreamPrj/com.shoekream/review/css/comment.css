@@ -1,0 +1,280 @@
+.comment_wrap{
+    max-width: 720px;
+    display: block;
+    margin: auto;
+}
+.nocomment{
+    display: flex;
+    justify-content: flex-start;
+    height: 70px;
+    /* background-color: aliceblue; */
+}
+.x{
+    height: 30px;
+    width: 30px;
+    margin-top: 6px;
+}
+.comment_xwrite{
+    margin-left: 10px;
+}
+.xx{
+    margin-top: 7px;
+    /* margin-right: 30px; */
+
+}
+.profile{
+    display:flex;
+    /* justify-content: center; */
+    max-width: 720px;
+    margin: auto;
+    align-items: center;
+    text-decoration: none;
+    height: 70px;
+    border-bottom: 2px solid lightgray;
+    /* background-color: aqua; */
+}
+.profiless{
+    display: flex;
+    justify-content: flex-start;
+    /* margin: auto; */
+    /* background-color: yellow; */
+}
+.profiless a{
+	text-decoration: none;
+	color: black;
+}
+.profile_img{
+    width: 30px;
+    height: 30px;
+    border-radius: 70%;
+    border: 1px solid lightgray;
+    overflow: hidden;
+    cursor: pointer;
+    margin-top: 5px;
+    /* margin-left: 10px; */
+    /* text-align: center; */
+}
+.profile_detail{
+	margin-left: 20px;
+}
+.date01{
+    color: lightgray;
+    font-size: 12px;
+}
+.hashtag{
+    display: flex;
+    margin: 0px 70px;
+    /* background-color: aquamarine; */
+}
+.hashtag a{
+    text-decoration: none;
+    color: black;
+}
+/* #brand{
+    display: block;
+    margin: auto;
+} */
+.comment_box{
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    /* margin-top: 20px; */
+    border-bottom: 1px solid lightgray;
+    /* background-color: beige; */
+}
+.wcomment{
+    border-radius: 15px;
+    margin-left: 20px;
+    margin-top: 5px;
+    width: 100%;
+    /* background-color: orange; */
+}
+
+.uploadid{
+    /* display: flex;
+    justify-content: center; */
+    /* margin-left: 20px; */
+    margin-right: 40px;
+    margin-top: 20px;
+    /* background-color: red; */
+}
+#uploadid{
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    width: 60px;
+    height: 30px;
+}
+.exprofile{
+    width: 30px;
+    height: 30px;
+    border-radius: 70%;
+    border: 1px solid lightgray;
+    overflow: hidden;
+    cursor: pointer;
+    margin-top: 15px;
+    /* margin-left: 10px; */
+}
+.wcomment_profile{
+    margin-top: 4px;
+    /* background-color: rebeccapurple; */
+}
+#write_comment{
+    border: 1px solid lightgray;
+    border-radius: 12px;
+    width: 500px;
+    margin-top: 15px;
+    /* height: 300px; */
+}
+.comment_list_box{
+    height: 600px;
+    /* background-color: brown; */
+}
+/* .comment_list{
+    display: flex; */
+    /* justify-content: flex-start; */
+    /* background-color: violet; */
+    /* height: 70px; */
+/* } */
+.comment_list{
+    display:flex;
+    /* justify-content: center; */
+    max-width: 720px;
+    margin: auto;
+    align-items: center;
+    text-decoration: none;
+    height: 70px;
+    border-bottom: none
+    /* background-color:  skyblue; */
+}
+.comment_list01{
+    display: flex;
+    justify-content: space-around;
+    height: 70px;
+    /* display: flex;
+    justify-content: space-between; */
+    /* background-color: bisque; */
+}
+.kitty{
+    /* width: 40px;
+    height: 60px;
+    margin: auto; */
+    /* background-color: aliceblue; */
+}
+.profile_kitty{
+    width: 30px;
+    height: 30px;
+    border-radius: 70%;
+    overflow: hidden;
+    cursor: pointer;
+    margin-top: 15px;
+    /* border: 1px solid lightgray; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* margin-top: 5px; */
+    /* margin-left: 10px; */
+}
+.list_name_date{
+    text-align: start;
+    width: 130px;
+    margin-left: 20px;
+    margin-top: 15px;
+    /* background-color: blue; */
+}
+.people_porfile{
+    /* margin-bottom: 50px; */
+    /* background-color: aqua; */
+}
+/* #ejeong{
+    margin-bottom: 100px;
+} */
+.list_name_date a{
+    text-decoration: none;
+}
+.list_name_date a{
+    color: black;
+}
+.date02{
+    color: lightgray;
+    font-size: 12px;
+}
+.airforce{
+    display: flex;
+    margin: 0px 30px;
+    width: 90%;
+    /* height: 30px;
+    margin-left: 100px; */
+    /* background-color: red; */
+}
+/* .heart{ */
+    /* background-color: yellow; */
+    /* display: flex;
+    justify-content: flex-end; */
+/* } */
+
+.comment_list2{
+    display:flex;
+    /* justify-content: center; */
+    max-width: 720px;
+    margin: auto;
+    align-items: center;
+    text-decoration: none;
+    height: 70px;
+    border: none;
+    /* border-bottom: 2px solid lightgray; */
+    /* background-color:  rgb(176, 212, 225); */
+}
+.comment_list02{
+    display: flex;
+    justify-content: space-around;
+    height: 70px;
+    /* display: flex;
+    justify-content: space-between; */
+    /* background-color: bisque; */
+}
+.kitty02{
+    /* width: 40px;
+    height: 60px;
+    margin: auto; */
+    /* background-color: aliceblue; */
+}
+.profile_kitty2{
+    width: 30px;
+    height: 30px;
+    border-radius: 70%;
+    overflow: hidden;
+    cursor: pointer;
+    margin-top: 15px;
+    border: 1px solid lightgray;
+
+    width: 30px;
+    height: 30px;
+    border-radius: 70%;
+    overflow: hidden;
+    cursor: pointer;
+    margin-top: 15px;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* margin-top: 5px; */
+    /* margin-left: 10px; */
+}
+.list_name_date02{
+    text-align: start;
+    width: 130px;
+    margin-left: 10px;
+    margin-top: 15px;
+    /* background-color: blue; */
+}
+.list_name_date02 a{
+    text-decoration: none;
+}
+.date03{
+    color: lightgray;
+    font-size: 12px;
+}
+.meto{
+    display: flex;
+    margin: 0px 45px;
+    margin-bottom: 10px;
+    width: 90%;
+}
