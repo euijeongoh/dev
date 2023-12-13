@@ -283,10 +283,12 @@ public class ReviewDao {
 		if(rs.next()) {
 			String name = rs.getString("NAME");
 			String nameKo = rs.getString("NAME_KO");
+//			String productNo = rs.getString("PRODUCT_NO");
 			dbVo = new EnrollProductVo();
 			
 			dbVo.setProductName(name);
 			dbVo.setProductNameKo(nameKo);
+			dbVo.setProductNo(productNo);
 			
 		}
 		JDBCTemplate.close(rs);
