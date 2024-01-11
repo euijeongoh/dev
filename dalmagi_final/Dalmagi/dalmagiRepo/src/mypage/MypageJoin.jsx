@@ -28,8 +28,8 @@ const StyledMypageJoinDiv = styled.div`
     }
 
     & > form {
-        width: 60%;
-        height: 100%;
+        width: 63%;
+        height: 120%;
         margin-bottom: 10%;
         border: 2px solid black;
         /* background-color: beige; */
@@ -141,7 +141,7 @@ const StyledMypageJoinDiv = styled.div`
         }
 
         & > .joinbutton {
-            height: 50px;
+            height: 80px;
             display: flex;
             justify-content: center;
             align-items: center;
