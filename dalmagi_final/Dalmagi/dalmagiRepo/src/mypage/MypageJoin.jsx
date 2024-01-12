@@ -141,7 +141,15 @@ const StyledMypageJoinDiv = styled.div`
         }
 
         & > .joinbutton {
-            height: 80px;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* background-color: yellowgreen; */
+        }
+
+        & > .resetbutton {
+            height: 40px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -149,6 +157,16 @@ const StyledMypageJoinDiv = styled.div`
         }
 
         & > .joinbutton > button {
+            width: 150px;
+            height: 38px;
+            border-radius: 12px;
+            background-color: navy;
+            color: white;
+            font-family: 'Pretendard';
+            font-weight: 700;
+            font-size: 16px;
+        }
+        & > .resetbutton > button {
             width: 150px;
             height: 38px;
             border-radius: 12px;
@@ -239,6 +257,7 @@ const handleJoinSubmit = (event) => {
                 <div className='phoneinput'><input type="text" name="phone" /></div>
                 <div className='none2'></div>
                 <div className='joinbutton'><button>가입하기</button></div>
+                <div className='resetbutton'><button type='reset'>초기화</button></div>
                 </form>
         </StyledMypageJoinDiv>
     );
