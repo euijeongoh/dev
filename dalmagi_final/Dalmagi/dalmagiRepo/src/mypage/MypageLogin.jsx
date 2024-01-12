@@ -102,8 +102,8 @@ const StyledLoginMainDiv = styled.div`
        }
 
        & > div > button {
-        width: 100px;
-        height: 35px;
+        width: 25%;
+        height: 55%;
         border-radius: 12px;
         background-color: navy;
         color: white;
