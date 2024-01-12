@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const StyledNoticeListDiv = styled.div`
@@ -15,7 +15,7 @@ const StyledNoticeListDiv = styled.div`
         height: 80%;
         border: 3px solid black;
     }
-    & > buttton {
+    & > button {
         width: 30%;
         font-size: 2rem;
     }
@@ -24,25 +24,27 @@ const StyledNoticeListDiv = styled.div`
 
 const AdminNoticeList = () => {
 
-    console.log("NoticeList 컴포넌트 렌더링 ~~~");
+    console.log("AdminNoticeList 컴포넌트 렌더링 ~~~");
 
-    const navigate = useNavigate();
+    const Navigate = useNavigate();
+    
+
 
     //fetch 를 이용해서 데이터 준비
-    const [NoticeVoList,setNoticeVoList] = useState([]);
-    const loadNoticeVoList = () => {
+    const [AdminNoticeVoList,setAdminNoticeVoList] = useState([]);
+    const loadAdminNoticeVoList = () => {
         fetch("http://127.0.0.1:8888/app/admin/notice/list")
         .then( resp => resp.json() )
-        .then( (x) => { setNoticeVoList(x); })
+        .then( (x) => { setAdminNoticeVoList(x); })
         ;
     }
 
     useEffect(()=>{
-        console.log("useEffect 호출됨~~~");
-        loadNoticeVoList();
+        console.log("useEffect 호출됨~");
+        loadAdminNoticeVoList();
     }, []);
 
-    console.log("return 직전 ~~~ (곧 렌더링-화면만들기-완료");
+
     return (
         <StyledNoticeListDiv>
             <table>
@@ -57,11 +59,11 @@ const AdminNoticeList = () => {
                 </thead>
                 <tbody>
                     {
-                        NoticeVoList.length === 0
+                        AdminNoticeVoList.length === 0
                         ?
                         <h1>로딩중...</h1>
                         :
-                        NoticeVoList.map( vo => <tr key={vo.no}>
+                        AdminNoticeVoList.map( vo => <tr key={vo.no}>
                                 <td>{vo.no}</td>
                                 <td>{vo.title}</td>
                                 <td>{vo.adminNo}</td>
@@ -74,7 +76,7 @@ const AdminNoticeList = () => {
             </table>
            
                 <button onClick={ () => {
-                    navigate("/admin/notice/list");
+                    Navigate("/admin/notice/list");
                 }}>작성하기</button>
 
         </StyledNoticeListDiv>
