@@ -25,7 +25,7 @@ const StyledNoticeDetailDiv = styled.div`
                 height: 10%;
                 display: flex;
                 align-items: center;
-                margin-top: 3%;
+                margin-top: 2%;
                 margin-left: 20%;
                 justify-content: flex-start;
                 border-bottom: 2px solid black;
@@ -34,16 +34,11 @@ const StyledNoticeDetailDiv = styled.div`
                 /* background-color: greenyellow; */
             }
 
-            & > .none1 {
-                height: 5%;
-                /* background-color: yellow; */
-            }
-
             & > form {
                 width: 1000px;
                 height: 80%;
                 margin-left: 20%;
-                border: 2px solid black;
+                /* border: 2px solid black; */
                 /* background-color: beige; */
 
                     & > .dropdown_head {    
@@ -53,19 +48,19 @@ const StyledNoticeDetailDiv = styled.div`
 
                         &> .date {
                             width: 50%;
-                            height: 50%;
+                            height: 45%;
                             display: flex;
                             justify-content: flex-start;
                             align-items: center;
-                            margin-top: 10px;
-                            margin-left: 10%;
+                            margin-top: 20px;
+                            margin-left: 8%;
                             font-size: 15px;
                             /* background-color: azure; */
                             }
             
                         & > .notice_title{
                             width: 50%;
-                            height: 50%;
+                            height: 45%;
                             display: flex;
                             justify-content: flex-start;
                             align-items: center;
@@ -74,7 +69,7 @@ const StyledNoticeDetailDiv = styled.div`
                             }
                     }
 
-                    & > .none2 {
+                    & > .none {
                     height: 4%;
                     /* background-color: yellow; */
                     }
@@ -95,7 +90,28 @@ const StyledNoticeDetailDiv = styled.div`
                                 /* border: 1px solid black; */
                                 /* background-color: lightgray; */
                             }
-                    }    
+                    }   
+                    
+                    & > .list {
+                        height: 50px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-top: 30px;
+                        /* background-color: yellowgreen; */
+                    }
+
+                    & > .list > a {
+                        height: 65%;
+                        width: 10%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                        border : 1px solid lightgray;
+                        border-radius: 10px;
+                    }
+                    
                 }       
 
                 
@@ -116,18 +132,18 @@ const AdminNoticeDetail = () => {
         <StyledNoticeDetailDiv>
             <div className='notice_wrap'>
                 <div className='notice'>공지사항</div>
-                <div className='none1'>빈칸</div>
                 <form action="">
                     <div className="dropdown_head">
                         <div className="date">2024.01.14</div>
                         <div className="notice_title">[공지] 유저에게 알리는 소식</div>
                     </div>
-                    <div className='none2'></div>
+                    <div className='none'></div>
                     <div className='dropdown_content'>
                         <div className="content">
                             <textarea name="content" id="content" cols="120" rows="30"></textarea>
                         </div>
                     </div>
+                    <div className='list'><a href=''>목록보기</a></div>
                 </form>
             </div>
         </StyledNoticeDetailDiv>
