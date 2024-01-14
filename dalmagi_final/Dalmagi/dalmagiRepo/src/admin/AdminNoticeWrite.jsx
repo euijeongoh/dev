@@ -21,7 +21,7 @@ const StyledNoticeWriteDiv = styled.div`
             /* background-color:antiquewhite; */
 
             & > .notice {
-                width: 80%;
+                width: 1000px;
                 height: 10%;
                 display: flex;
                 align-items: center;
@@ -40,12 +40,13 @@ const StyledNoticeWriteDiv = styled.div`
             }
 
             & > form {
-                width: 60%;
+                width: 1000px;
                 height: 80%;
+                margin-left: 20%;
                 border: 2px solid black;
                 /* background-color: beige; */
 
-                & > .dropdown_head {
+                & > .dropdown_head {    
                     width: 100%;
                     height: 10%;
                     /* background-color: greenyellow; */
@@ -54,8 +55,10 @@ const StyledNoticeWriteDiv = styled.div`
                         width: 50%;
                         height: 50%;
                         display: flex;
-                        justify-content: center;
+                        justify-content: flex-start;
                         align-items: center;
+                        margin-top: 10px;
+                        margin-left: 10%;
                         font-size: 15px;
                         /* background-color: azure; */
                         }
@@ -64,32 +67,32 @@ const StyledNoticeWriteDiv = styled.div`
                         width: 50%;
                         height: 50%;
                         display: flex;
-                        justify-content: center;
-                        margin-left: 10%;
+                        justify-content: flex-start;
                         align-items: center;
+                        margin-left: 10%;
                         /* background-color: aqua; */
                         }
-                }
+                    }
 
-                    & > .none1 {
-                    height: 5%;
+                    & > .none2 {
+                    height: 4%;
                     /* background-color: yellow; */
-                }
+                    }
 
-                & > .dropdown_content{
-                    width: 940px;
-                    height: 514px;
-                    border-bottom: 1px solid;
-                    /* background-color: red; */
                     
                     & > .content{
                         height: 60%;
                         width: 100%;
-                        border: 1px solid darkgray;
-                        background-color: lightgray;
-                    }
+                        display: flex;
+                        justify-content: center;
+                        /* border: 1px solid black; */
+                        /* background-color: lightgray; */
 
-                }
+                        & > .content > textarea {
+                        }
+                    }       
+
+                
     
             }
 
@@ -113,11 +116,9 @@ const AdminNoticeWrite = () => {
                         <div className="date">2024.01.14</div>
                         <div className="notice_title">[공지] 유저에게 알리는 소식</div>
                     </div>
-                    <div className='none1'>빈칸</div>
-                    <div className="dropdown_content">
-                        <div className="content">
-                            <textarea name="content" id="content" cols="30" rows="10"></textarea>
-                        </div>
+                    <div className='none2'></div>
+                    <div className="content">
+                        <textarea name="content" id="content" cols="120" rows="30"></textarea>
                     </div>
                 </form>
             </div>
