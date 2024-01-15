@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,18 +19,19 @@ import lombok.RequiredArgsConstructor;
 @Controller
 @RequestMapping("member")
 @RequiredArgsConstructor
+@CrossOrigin("*")
 public class MemberController {
 	
 	private final MemberService service;
 	
 	//회원가입 (화면)
-	@GetMapping("join")
+	@GetMapping("member/join")
 	public String join() {
 		return "member/join";
 	}
 	
 	//회원가입
-	@PostMapping("join")
+	@PostMapping("member/join")
 	public String join(MemberVo vo) throws Exception {
 		int result = service.join(vo);
 		
@@ -72,7 +74,7 @@ public class MemberController {
 	}
 	
 	//회원 탈퇴
-	@GetMapping("quit")
+	@GetMapping("quit")                                       
 	public String quit(MemberVo vo, HttpSession session) throws Exception {
 		
 		int result = service.quit(vo);
