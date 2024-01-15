@@ -17,7 +17,7 @@ const StyledMypageJoinDiv = styled.div`
         align-items: center;
         justify-content: center;
         margin-bottom: 100px;
-        /* background-color: red; */
+        /* background-color: re 5d; */
 
         & > img {
             height: 150px;
@@ -30,6 +30,7 @@ const StyledMypageJoinDiv = styled.div`
     & > form {
         width: 63%;
         height: 120%;
+        /* margin: auto; */
         margin-bottom: 10%;
         border: 2px solid black;
         /* background-color: beige; */
@@ -102,24 +103,6 @@ const StyledMypageJoinDiv = styled.div`
             border: 1px solid black;
         }
 
-        & > .date {
-            height: 30px;
-            display: flex;
-            margin-left: 35%;
-        }
-
-        & > .dateinput {
-            height: 30px;
-            display: flex;
-            justify-content: center;
-        }
-
-        & > .dateinput > input {
-            width: 30%;
-            height: 35px;
-            border-radius: 12px;
-            border: 1px solid black;
-        }
 
         & > .phone {
             height: 30px;
@@ -145,6 +128,7 @@ const StyledMypageJoinDiv = styled.div`
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-top: 30px;
             /* background-color: yellowgreen; */
         }
 
@@ -153,6 +137,7 @@ const StyledMypageJoinDiv = styled.div`
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-top: 10px;
             /* background-color: yellow; */
         }
 
@@ -249,9 +234,6 @@ const handleJoinSubmit = (event) => {
                 <div className='none2'></div>
                 <div className='name'>이름</div>
                 <div className='nameinput'><input type="text" name='name'/></div>
-                <div className='none2'></div>
-                <div className='date'>생년월일</div>
-                <div className='dateinput'><input type="date" name="day"/></div>
                 <div className='none2'></div>
                 <div className='phone'>휴대폰번호</div>
                 <div className='phoneinput'><input type="text" name="phone" /></div>
