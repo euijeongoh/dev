@@ -48,34 +48,110 @@ const StyledNoticeListDiv = styled.div`
             border: 2px solid white;
         }
     }
-    & > button {
-        width: 30%;
-        font-size: 2rem;
+    & > .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+
+        & > button {
+            border: none;
+            border-radius: 20px;
+            margin: 0 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
     }
 `;
 
 
 const NoticeList = () => {
 
-    console.log("AdminNoticeList 컴포넌트 렌더링 ~~~");
+    console.log("AdminNoticeList 컴포넌트 렌더링");
+        const [noticeListVoList, setnoticeListVoList] = useState([]);
+        const [currentPage, setCurrentPage] = useState(1);  // 현재 페이지 상태 추가
+        const [totalPages, setTotalPages] = useState(1);    // 전체 페이지 수 상태 추가
+        const [oNo, setONo] = useState();
+        const [vo, setVo] = useState({
+            oNo: "",
+            memberNo: "",
+        });
 
-    const Navigate = useNavigate();
+        const [noticeListVo, setnoticeListVo] = useState([]);
+
+        const navigate = useNavigate();
+    //  const Navigate = useNavigate();
     
-
-
-    //fetch 를 이용해서 데이터 준비
-    const [NoticeVoList,setNoticeVoList] = useState([]);
-    const loadNoticeVoList = () => {
-        fetch("http://127.0.0.1:8888/app/notice/list")
-        .then( resp => resp.json() )
-        .then( (x) => { setNoticeVoList(x); })
-        ;
-    }
+    // const handleChangeRestriction = (e) => {
+    //     const selectedValue = parseInt(e.target.value);
+    //     console.log(e.target.value);
+    //     // setVo(parseInt(e.target.value));
+    //     setVo({
+    //         ...vo,
+    //         "oNo": selectedValue, // 수정
+    //         "memberNo": selectedValue,//수정
+    //     })
+    //     // updateRestriction(vo);
+    // };
 
     useEffect(()=>{
         console.log("useEffect 호출됨~");
         loadNoticeVoList();
     }, []);
+
+    //fetch 이용해 데이터 준비 (페이지 처리)
+    // const [NoticeVoList,setNoticeVoList] = useState([]);
+    const loadNoticeVoList = (page) => {
+        
+        // URL 문자열 안에 변수를 넣을 때는 백틱(``)을 사용하고, 변수는 ${}로 감싸줌
+        fetch(`http://127.0.0.1:8888/app/notice/list?currentPage=${page}` , {
+            method: "GET" ,
+            headers: {
+                "Content-Type" : "application/json",
+            },
+        })
+        .then( resp => resp.json() )
+        .then( (data) => {
+            console.log('voList' , data.voList);
+            setnoticeListVoList(data.voList); //데이터 저장
+            setTotalPages(data.pvo.maxPage); //총 페이지 수 저장
+            console.log('data' , data);
+        })
+        ;
+    }
+
+    // const updateRestriction = (updatedVo) => { 
+    //     console.log(updatedVo);
+    //     fetch("http://127.0.0.1:8888/app/notice/list/edit", {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //         },
+    //         body: JSON.stringify(updatedVo)
+    //     })
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         console.log('vo', data.vo);
+    //         setnoticeListVo(data.vo);
+    //         navigate("/notice/list");
+    //     });
+    // }
+
+    //페이지 번호를 클릭하면 해당 페이지의 목록을 불러오는 함수
+    const handlerClickPageNum = (page) => {
+        console.log(`page = ${page}`);
+        setCurrentPage(page);  //페이지 변경 요청 수행
+    }
+
+    useEffect( () => {
+        loadNoticeVoList(currentPage); //현재 페이지의 목록 불러오기
+    }, [currentPage] );
+    
+    useEffect( () => {
+        console.log(noticeListVoList);
+    }, [noticeListVoList] );
+    
+
+    
 
 
     return (
@@ -95,13 +171,13 @@ const NoticeList = () => {
                     </thead>
                     <tbody>
                     {
-                            NoticeVoList.length === 0
+                            noticeListVoList.length === 0
                             ?
                             (<tr>
                                 <td colSpan="4">로딩중...</td>
                             </tr>)
                             :
-                            NoticeVoList.map( vo => <tr key={vo.no}>
+                            noticeListVoList.map( vo => <tr key={vo.no}>
                                     <td>{vo.no}</td>
                                     <td>{vo.title}</td>
                                     <td>{vo.enrollDate}</td>
@@ -111,6 +187,23 @@ const NoticeList = () => {
                         }
                     </tbody>
                 </table>
+            </div>
+            <div className='pagination'>
+                {totalPages 
+                ? 
+                (
+                    Array.from({length: totalPages}, (_, i) =>
+                        <button
+                            key={`page_button_${i}`}
+                            onClick={() => handlerClickPageNum(i + 1)}
+                            disabled={currentPage === i+1}
+                        >
+                            {i + 1}
+                        </button>
+                    )) 
+                : 
+                null
+                }
             </div>
            
 
