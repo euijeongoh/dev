@@ -141,7 +141,7 @@ const StyledMypageJoinDiv = styled.div`
             /* background-color: yellow; */
         }
 
-        & > .joinbutton > button {
+        & > .joinbutton > input {
             width: 150px;
             height: 38px;
             border-radius: 12px;
@@ -169,22 +169,31 @@ const MypageJoin = () => {
     const navigate = useNavigate();
 
     let isFetching = false;
-    const [vo] =  useState({
+    const [vo, setVo] =  useState({
         id : "",
         pwd : "",
-        nick: ""
+        name: "",
+        phone: ""
     });
 
-const handleJoinSubmit = (event) => {
-    event.preventDefault();
+    const handleInputChange = (event) => {
+        const {name , value} = event.target;
 
-    //작업을 해도되나 안해도되나 검사하는 작업
-    if(isFetching){
-        return;
+        setVo({
+            ...vo ,
+            [name] : value
+        });
     }
+    const handleJoinSubmit = (event) => {
+        event.preventDefault();
 
-    //작업시작
-    isFetching = true;
+        //작업을 해도되나 안해도되나 검사하는 작업
+        if(isFetching){
+            return;
+        }
+
+        //작업시작
+        isFetching = true;
     
 
     fetch("http://127.0.0.1:8888/app/member/join" , {
@@ -206,7 +215,7 @@ const handleJoinSubmit = (event) => {
             navigate("/");
         }else{
             alert("회원가입 실패 ...");
-            navigate("/failpage~~~");
+            navigate("/failpage");
         }
         
     } )
@@ -227,18 +236,21 @@ const handleJoinSubmit = (event) => {
                 <form onSubmit={ handleJoinSubmit }>
                 <div className='none1'></div>
                 <div className='id'>아이디</div>
-                <div className='idinput'><input type="text" name='id' placeholder='5~15자(영문, 소문자)' /></div>
+                <div className='idinput'><input type="text" name='id' placeholder='아이디를 입력하세요'  onChange={handleInputChange} /></div>
                 <div className='none2'></div>
                 <div className='pwd'>비밀번호</div>
-                <div className='pwdinput'><input type="password" name='pwd' placeholder='9자~15자(영문, 숫자, 특수문자를 각 1개 이상 조합)' /></div>
+                <div className='pwdinput'><input type="password" name='pwd' placeholder='비밀번호를 입력하세요'  onChange={handleInputChange} /></div>
                 <div className='none2'></div>
                 <div className='name'>이름</div>
-                <div className='nameinput'><input type="text" name='name'/></div>
+                <div className='nameinput'><input type="text" name='name'  onChange={handleInputChange}/></div>
                 <div className='none2'></div>
                 <div className='phone'>휴대폰번호</div>
-                <div className='phoneinput'><input type="text" name="phone" /></div>
+                <div className='phoneinput'><input type="text" name="phone"  onChange={handleInputChange} /></div>
                 <div className='none2'></div>
-                <div className='joinbutton'><button>가입하기</button></div>
+                <div className='phone'>대출 비밀번호 설정</div>
+                <div className='phoneinput'><input type="pwd" name="borrow_pwd"  onChange={handleInputChange} /></div>
+                <div className='none2'></div>
+                <div className='joinbutton'><input type="submit" value="가입하기" /></div>
                 <div className='resetbutton'><button type='reset'>초기화</button></div>
                 </form>
         </StyledMypageJoinDiv>
