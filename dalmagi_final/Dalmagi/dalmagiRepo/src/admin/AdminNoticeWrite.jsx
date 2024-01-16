@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const StyledNoticeWriteDiv = styled.div`
@@ -25,72 +26,108 @@ const StyledNoticeWriteDiv = styled.div`
                 height: 10%;
                 display: flex;
                 align-items: center;
+                margin: auto;
                 margin-top: 3%;
-                margin-left: 20%;
-                justify-content: flex-start;
-                border-bottom: 2px solid black;
+                justify-content: center;
+                /* border-bottom: 2px solid black; */
                 font-size:24px;
                 font-weight: bolder;
                 /* background-color: greenyellow; */
             }
 
             & > .none1 {
-                height: 5%;
+                height: 3%;
                 /* background-color: yellow; */
             }
 
             & > form {
-                width: 1000px;
-                height: 80%;
-                margin-left: 20%;
+                width: 65%;
+                height: 88%;
+                margin: auto;
+                margin-bottom: 80px;
                 border: 2px solid black;
                 /* background-color: beige; */
 
-                & > .dropdown_head {    
+                & > .title {    
                     width: 100%;
                     height: 10%;
+                    display: flex;
+                    justify-content: center;
+                    margin: auto;
+                    margin-top: 20px;
                     /* background-color: greenyellow; */
 
-                    &> .date {
-                        width: 50%;
-                        height: 50%;
+                    & > .title01 {
+                        width: 60%;
+                        height: 60px;
                         display: flex;
-                        justify-content: flex-start;
+                        justify-content: space-evenly;
                         align-items: center;
-                        margin-top: 10px;
-                        margin-left: 10%;
-                        font-size: 15px;
-                        /* background-color: azure; */
-                        }
-        
-                    & > .notice_title{
-                        width: 50%;
-                        height: 50%;
-                        display: flex;
-                        justify-content: flex-start;
-                        align-items: center;
-                        margin-left: 10%;
-                        /* background-color: aqua; */
+                        margin: auto;
+                        /* background-color: red; */
+
+                        & > input {
+                            width: 100%;
+                            height: 100%;
                         }
                     }
+
+                }
 
                     & > .none2 {
                     height: 4%;
                     /* background-color: yellow; */
                     }
 
-                    
                     & > .content{
-                        height: 60%;
-                        width: 100%;
-                        display: flex;
+                        height: 70%;
+                        width: 85%;
+                        margin: auto;
+                        /* border: 1px solid gray; */
                         justify-content: center;
-                        /* border: 1px solid black; */
-                        /* background-color: lightgray; */
 
-                        & > .content > textarea {
+                        & > textarea {
+                            height: 100%;
+                            width: 100%;
                         }
-                    }       
+                    } 
+                    
+                    & > .update {
+                        width: 20%;
+                        height: 40px;
+                        margin-top: 40px;
+                        margin-left:38%;
+                        /* margin: auto; */
+                        /* background-color: yellow; */
+
+                        & > ul {
+                            display: flex;
+                            justify-content: space-between;
+                            margin: auto;
+                            list-style: none;
+
+                            & > li > .u {
+                                width: 90px;
+                                height: 40px;
+                                border-radius: 10%;
+                                background-color: black;
+                                color: white;
+                                font-family: 'Pretendard';
+                                font-weight: 700;
+                                font-size: 16px;
+                            }
+
+                            & > li > a >.c {
+                                width: 90px;
+                                height: 40px;
+                                border-radius: 10%;
+                                background-color: white;
+                                font-family: 'Pretendard';
+                                font-weight: 700;
+                                font-size: 16px;
+                            }
+                        }
+                    }
 
                 
     
@@ -103,22 +140,72 @@ const StyledNoticeWriteDiv = styled.div`
 
 const AdminNoticeWrite = () => {
 
-    const str = sessionStorage.getItem("loginMemberVo");
-    const vo = JSON
+    const str = sessionStorage.getItem("adminNoticeVo");
+    const vo = JSON.parse(str);
+    // const adminNo = vo.no;
 
+    const [inputAdminNoticeVo, setInputAdminNoticeVo] = useState({
+        // "adminNo": adminNo,
+        "title": "",
+        "content": "",
+    });
+    
+    const navigate = useNavigate();
+
+    const handleSubmit = (event)=>{
+        event.preventDefault();
+
+
+        fetch("http://127.0.0.1:8888/app/admin/notice/write", {
+            method: "POST",
+            headers: {
+                "Content-Type" : "application/json",
+            },
+            body: JSON.stringify(inputAdminNoticeVo),
+        })
+
+        .then( (resp) => resp.json() )
+        .then( (data) => {
+            if(data.msg === "good"){    //data확인했는데 성공이라고 써있음
+                alert("게시글 작성 성공!")
+                navigate("/admin/notice/list");    //성공했으니까 url 경로를 다시 list로 바꾸기
+            }else{
+                alert("게시글 작성 실패..");
+            }
+
+        } )
+        ;
+    }
+
+    const handleChangeInput = (event) => {
+        const { name, value } = event.target;
+    
+        setInputAdminNoticeVo({
+            ...inputAdminNoticeVo,
+            [name]: value,
+        });
+    }
+    
     return (
         <StyledNoticeWriteDiv>
             <div className='notice_wrap'>
-                <div className='notice'>공지사항</div>
-                <div className='none1'>빈칸</div>
-                <form action="">
-                    <div className="dropdown_head">
-                        <div className="date">2024.01.14</div>
-                        <div className="notice_title">[공지] 유저에게 알리는 소식</div>
+                <div className='notice'><h2>공지사항</h2></div>
+                <div className='none1'></div>
+                <form onSubmit={handleSubmit}>
+                    <div className="title">
+                        <div className='title01'>
+                            <input type="text" id='title' name='title' placeholder='제목 입력' onChange={handleChangeInput} />
+                        </div>
                     </div>
                     <div className='none2'></div>
                     <div className="content">
-                        <textarea name="content" id="content" cols="120" rows="30"></textarea>
+                        <textarea name="content" id="content" cols="120" rows="30" placeholder=' 내용을 입력하세요' onChange={handleChangeInput}></textarea>
+                    </div>
+                    <div className="update">
+                        <ul>
+                            <li id="update_detail"><input type="submit" value="등록" className='u' /></li>
+                            <li id="update_detail"><a href=""><input type="submit" value="취소" className='c'/></a></li>
+                        </ul>
                     </div>
                 </form>
             </div>
