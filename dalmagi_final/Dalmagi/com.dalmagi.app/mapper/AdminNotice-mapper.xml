@@ -9,14 +9,12 @@
 		INSERT INTO NOTICE 
 		(
 			NO
-			, ADMIN_NO
 			, TITLE
 			, CONTENT
 		) 
 		VALUES
 		(
 			SEQ_NOTICE_NO.NEXTVAL
-			, #{adminNo}
 			, #{title}
 			, #{content}
 		)
