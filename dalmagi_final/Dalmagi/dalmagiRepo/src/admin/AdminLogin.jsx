@@ -112,24 +112,6 @@ const StyledLoginMainDiv = styled.div`
         font-size: 16px;
        }
 
-       & > .ul {
-        /* background-color: red; */
-
-       }
-
-       & > .ul > ul {
-        width: 100%;
-        height: 10%;
-        display: flex;
-        justify-content: space-evenly;
-        list-style: none;
-        /* background-color: aqua; */
-    }
-
-    & > .ul > ul > li > a:hover {
-        color: blue;
-    }
-
     }
     
 `;
@@ -148,7 +130,7 @@ const AdminLogin = () => {
     const handleInputChange = (event) => {
         const {name , value} = event.target;
 
-        setVo({
+        setVo({ 
             ...vo,
             [name] : value
         });
@@ -166,7 +148,7 @@ const AdminLogin = () => {
         isFetching = true;
 
         fetch("http://127.0.0.1:8888/app/admin/login" , {
-        method: "post",
+        method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
@@ -181,7 +163,7 @@ const AdminLogin = () => {
         .then( data => {
             if( data.msg === "good" ){
                 alert("로그인 성공 !");
-                navigate("/");
+                navigate("admin/mypage");
             }else{
                 alert("로그인 실패 ...");
                 navigate("/failpage~~");
@@ -210,13 +192,6 @@ const AdminLogin = () => {
                 <div><input type="password" name='pwd' onChange={handleInputChange}/></div>
                 <div></div>
                 <div><button>로그인</button></div>
-                <div className='ul'>
-                    <ul>
-                        <li><a>회원가입</a></li>
-                        <li><a>아이디 찾기</a></li>
-                        <li><a>비밀번호 찾기</a></li>
-                    </ul>
-                </div>
             </form>
         </StyledLoginMainDiv>
     );
