@@ -213,7 +213,7 @@ const MypageLogin = () => {
                 <div><button>로그인</button></div>
                 <div className='ul'>
                     <ul>
-                        <li><a>회원가입</a></li>
+                        <li><Link to="http:/localhost:3000/member/join">회원가입</Link></li>
                         <li><a>아이디 찾기</a></li>
                         <li><a>비밀번호 찾기</a></li>
                     </ul>
