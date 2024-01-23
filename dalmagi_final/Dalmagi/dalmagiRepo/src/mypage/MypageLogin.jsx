@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import { useDalmajiContext } from '../context/DalmajiContext';
 
 const StyledLoginMainDiv = styled.div`
     width: 100%;
@@ -137,14 +138,13 @@ const StyledLoginMainDiv = styled.div`
 
 
 const MypageLogin = () => {
-
+    const {loginMember, AdminLoginMember, setLoginMember, setAdminLoginMember} = useDalmajiContext();
     const navigate = useNavigate();
 
-    let isFetching = false;
-    const [vo, setVo] =  useState({
-        id : "",
-        pwd : "",
-    });
+    const jsonStr = sessionStorage.getItem("loginMemberVo");
+    const sessionLoginMemberVo = JSON.parse(jsonStr);
+
+    const [vo, setVo] = useState({});
 
     const handleInputChange = (event) => {
         const {name , value} = event.target;
@@ -159,45 +159,38 @@ const MypageLogin = () => {
         event.preventDefault();
 
         //작업을 해도되나 안해도되나 검사하는 작업
-        if(isFetching){
-            return;
-        }
+        // if(isFetching){
+        //     return;
+        // }
 
-        //작업시작
-        isFetching = true;
+        // //작업시작
+        // isFetching = true;
 
         fetch("http://127.0.0.1:8888/app/member/login" , {
-        method: "post",
+        method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(vo)
         })
-        .then( resp => {
-            if(!resp.ok){
-                throw new Error("로그인 fetch 실패..");
-            }
-            return resp.json();
-        } )
-        .then( data => {
-            if( data.msg === "good" ){
-                alert("로그인 성공 !");
-                navigate("/");
-            }else{
-                alert("로그인 실패 ...");
-                navigate("/failpage~~");
-            }
-            
-        } )
-        .catch( (e) => {
-            console.log(e);
-            alert("로그인 실패");
-        } )
-        .finally( () => {
-            isFetching = false;
-        } )
-        ;
-    }
+        .then((resp) => resp.json())
+      .then((data) => {
+        if (data.msg === "good") {
+          alert("로그인 성공.");
+          setLoginMember(data.loginMemberVo);
+          sessionStorage.setItem("loginMemberVo", JSON.stringify(data.loginMemberVo));
+          navigate('/');
+        } else {
+          alert("로그인 실패");
+        }
+      })
+      .catch((e) => {
+        console.log(e);
+      })
+      .finally(() => {
+        console.log("로그인 fetch 끝");
+      });
+  };
 
     return (
         <StyledLoginMainDiv>
@@ -213,7 +206,7 @@ const MypageLogin = () => {
                 <div><button>로그인</button></div>
                 <div className='ul'>
                     <ul>
-                        <li><Link to="http:/localhost:3000/member/join">회원가입</Link></li>
+                        <li><Link to="/member/join">회원가입</Link></li>
                         <li><a>아이디 찾기</a></li>
                         <li><a>비밀번호 찾기</a></li>
                     </ul>
