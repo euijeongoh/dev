@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import styled from 'styled-components';
 
 const StyledNoticeListDiv = styled.div`
@@ -10,6 +12,55 @@ const StyledNoticeListDiv = styled.div`
     grid-template-rows: 0.3fr 1.5fr 1fr 8fr 2fr 1.5fr;
     place-items: center center;
     padding: 3%;
+
+    & > .notice_title {
+        width: 50%;
+        margin-bottom: 50px;
+        font-size:30px;
+        font-weight: bolder;
+       
+        & > h1 {
+            font-family: 'Pretendard';
+            font-weight: 700;
+            font-size: 40px;
+        }
+    }
+
+    & > form {
+        width: 20%;
+        height: 60%;
+        display: flex;
+        margin-left: 63%;
+        margin-bottom: 25px;
+        /* background-color: red; */
+
+        & > .search {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            /* background-color: skyblue; */
+
+            & > input {
+                width: 300px;
+                height: 35px;
+                display: flex;
+                margin: auto;
+                border: 1px solid black;
+                border-radius: 10px;
+                font-size: 15px;
+            }
+
+            & > button {
+                width: 30px;
+                height: 35px;
+                margin: auto;
+                border: none;
+                background-color: white;
+            }
+        }
+
+    }
+
     & > div {
         width: 100%;
         height: 100%;
@@ -46,6 +97,10 @@ const StyledNoticeListDiv = styled.div`
             padding: 0;
             background-color: #F8F4EC;
             border: 2px solid white;
+
+            & > title {
+                color: black;
+            }
         }
     }
     & > .pagination {
@@ -67,31 +122,16 @@ const StyledNoticeListDiv = styled.div`
 const NoticeList = () => {
 
     console.log("AdminNoticeList 컴포넌트 렌더링");
-        const [noticeListVoList, setnoticeListVoList] = useState([]);
+        const [noticeVoList, setnoticeVoList] = useState([]);
         const [currentPage, setCurrentPage] = useState(1);  // 현재 페이지 상태 추가
         const [totalPages, setTotalPages] = useState(1);    // 전체 페이지 수 상태 추가
-        const [oNo, setONo] = useState();
-        const [vo, setVo] = useState({
-            oNo: "",
-            memberNo: "",
-        });
+        const [searchKeyword, setSearchKeyword] = useState('');
+        const [searchResult, setSearchResult] = useState([]);
 
         const [noticeListVo, setnoticeListVo] = useState([]);
 
-        const navigate = useNavigate();
-    //  const Navigate = useNavigate();
+        const navigate = useNavigate();;
     
-    // const handleChangeRestriction = (e) => {
-    //     const selectedValue = parseInt(e.target.value);
-    //     console.log(e.target.value);
-    //     // setVo(parseInt(e.target.value));
-    //     setVo({
-    //         ...vo,
-    //         "oNo": selectedValue, // 수정
-    //         "memberNo": selectedValue,//수정
-    //     })
-    //     // updateRestriction(vo);
-    // };
 
     useEffect(()=>{
         console.log("useEffect 호출됨~");
@@ -99,7 +139,6 @@ const NoticeList = () => {
     }, []);
 
     //fetch 이용해 데이터 준비 (페이지 처리)
-    // const [NoticeVoList,setNoticeVoList] = useState([]);
     const loadNoticeVoList = (page) => {
         
         // URL 문자열 안에 변수를 넣을 때는 백틱(``)을 사용하고, 변수는 ${}로 감싸줌
@@ -112,29 +151,12 @@ const NoticeList = () => {
         .then( resp => resp.json() )
         .then( (data) => {
             console.log('voList' , data.voList);
-            setnoticeListVoList(data.voList); //데이터 저장
+            setnoticeVoList(data.voList); //데이터 저장
             setTotalPages(data.pvo.maxPage); //총 페이지 수 저장
             console.log('data' , data);
-        })
+        } )
         ;
     }
-
-    // const updateRestriction = (updatedVo) => { 
-    //     console.log(updatedVo);
-    //     fetch("http://127.0.0.1:8888/app/notice/list/edit", {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //         },
-    //         body: JSON.stringify(updatedVo)
-    //     })
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         console.log('vo', data.vo);
-    //         setnoticeListVo(data.vo);
-    //         navigate("/notice/list");
-    //     });
-    // }
 
     //페이지 번호를 클릭하면 해당 페이지의 목록을 불러오는 함수
     const handlerClickPageNum = (page) => {
@@ -147,8 +169,26 @@ const NoticeList = () => {
     }, [currentPage] );
     
     useEffect( () => {
-        console.log(noticeListVoList);
-    }, [noticeListVoList] );
+        console.log("noticeVoList", noticeVoList);
+    }, [noticeVoList] );
+
+    const handleSearch = () => {
+        // 서버에 검색 요청을 보내는 코드 작성
+        fetch(`http://127.0.0.1:8888/app/notice/list/search?keyword=${searchKeyword}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+        .then(resp => resp.json())
+        .then(data => {
+            setSearchResult(data); // 검색 결과 설정
+        })
+        .catch(error => {
+            console.error('검색 오류:', error);
+            // 에러 처리 코드 작성
+        });
+    };
     
 
     
@@ -158,7 +198,14 @@ const NoticeList = () => {
         <StyledNoticeListDiv>
             <div></div>
             <div className='notice_title'><h1>공지사항</h1></div>
-            <div className='search'>검색기능</div>
+            <form action="">
+                <div className='search'>
+                    <input type="search" name='search' placeholder='  검색어를 입력하세요.' value={searchKeyword} onChange={(e) => setSearchKeyword(e.target.value)}/>
+                    <button onClick={handleSearch}>
+                        <FontAwesomeIcon icon={faMagnifyingGlass} />
+                    </button>
+                </div>
+            </form>
             <div className='table'>
                 <table>
                     <thead>
@@ -171,15 +218,15 @@ const NoticeList = () => {
                     </thead>
                     <tbody>
                     {
-                            noticeListVoList.length === 0
+                            noticeVoList.length === 0
                             ?
                             (<tr>
                                 <td colSpan="4">로딩중...</td>
                             </tr>)
                             :
-                            noticeListVoList.map( vo => <tr key={vo.no}>
+                            noticeVoList.map( vo => <tr key={vo.no}>
                                     <td>{vo.no}</td>
-                                    <td>{vo.title}</td>
+                                    <td><Link to={`/notice/detail/${vo.no}`}>{vo.title}</Link></td>
                                     <td>{vo.enrollDate}</td>
                                     <td>{vo.hit}</td>
                                 </tr>
