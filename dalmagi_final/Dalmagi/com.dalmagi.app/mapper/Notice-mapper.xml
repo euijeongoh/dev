@@ -9,14 +9,12 @@
 		INSERT INTO NOTICE 
 		(
 			NO
-			, ADMIN_NO
 			, TITLE
 			, CONTENT
 		) 
 		VALUES
 		(
 			SEQ_NOTICE_NO.NEXTVAL
-			, #{adminNo}
 			, #{title}
 			, #{content}
 		)
@@ -37,7 +35,8 @@
 		    NO
 		    , ADMIN_NO
 		    , TITLE
-		    , ENROLL_DATE
+		    , TO_CHAR(ENROLL_DATE, 'YYYY.MM.DD') AS ENROLL_DATE
+		    , DEL_YN
 		    , HIT
 		FROM NOTICE
 		WHERE DEL_YN = 'N'
@@ -50,13 +49,14 @@
 	        ,ADMIN_NO
 	        ,TITLE
 	        ,CONTENT
-	        ,ENROLL_DATE
+	        , TO_CHAR(ENROLL_DATE, 'YYYY.MM.DD') AS ENROLL_DATE
 	        ,MODIFY_DATE
 	        ,DEL_YN
 	        ,HIT
 	    FROM NOTICE
 	    WHERE NO = #{no}
 	    AND DEL_YN = 'N'
+	    ORDER BY NO DESC
 	</select>
 	
 	<update id="hit" >
@@ -85,16 +85,6 @@
 			WHERE NO = #{no}
 			AND DEL_YN = 'N'
 	</update>
-	
-	<select id="count" resultType="String">
- 	SELECT COUNT(*) AS LISTCOUNT
-	FROM OVERDUE O
-	JOIN BORROW B ON B.BORROW_NO = O.BORROW_NO 
-	JOIN BOOK_STATUS S ON S.STATUS_NO = O.STATUS_NO
-	JOIN BOOK_LIST L ON L.BOOK_NO = B.BOOK_NO
-	JOIN MEMBER M ON M.MEMBER_NO = O.MEMBER_NO
-	WHERE M.DEL_YN = 'N'
-  </select>
   
   
 </mapper>
